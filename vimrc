@@ -105,3 +105,5 @@ colorscheme onedark
 " Line numbers
 set number
 
+" Cursor line
+set cursorline
