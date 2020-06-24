@@ -107,3 +107,13 @@ set number
 
 " Cursor line
 set cursorline
+
+" Encoding
+set encoding=utf-8
+
+" Only Windows (gVim)
+"set guifont=Consolas:h12
+"set langmenu=en_US
+"let $LANG = 'en_US'
+"source $VIMRUNTIME/delmenu.vim
+"source $VIMRUNTIME/menu.vim
