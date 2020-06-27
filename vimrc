@@ -1,4 +1,40 @@
 " Based on: sensible.vim - Defaults everyone can agree on by Tim Pope
+" Vundle ============================================================
+" Make sure you have Vundle installed:
+" git clone https://github.com/preservim/nerdtree.git
+" ~/.vim/pack/vendor/start/nerdtree
+" vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Keep Plugin commands between vundle#begin/end.
+Plugin 'tpope/vim-fugitive'  " :Git commands
+Plugin 'preservim/nerdtree'  " file explorer
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line =========================
+
 if exists('g:loaded_sensible') || &compatible
   finish
 else
@@ -113,6 +149,10 @@ set encoding=utf-8
 
 " Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" NERDTree shortcut
+imap <F7> <ESC>:NERDTreeFocus<CR>
+nmap <F7> :NERDTreeFocus<CR>
 
 " Only Windows (gVim)
 "set guifont=Consolas:h12
