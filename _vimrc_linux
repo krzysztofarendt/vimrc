@@ -19,6 +19,7 @@ Plugin 'preservim/nerdtree'  " file explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
+Plugin 'vim-scripts/indentpython.vim'
  
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -155,3 +156,11 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 imap <F7> <ESC>:NERDTreeFocus<CR>
 nmap <F7> :NERDTreeFocus<CR>
 
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+set foldlevelstart=0
+
+" Enable folding with the spacebar
+nnoremap <space> za
+nnoremap <C-space> zR
