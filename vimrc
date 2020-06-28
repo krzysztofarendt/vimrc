@@ -18,6 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'  " :Git commands
 Plugin 'preservim/nerdtree'  " file explorer
+Plugin 'Xuyuanp/nerdtree-git-plugin'
  
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
