@@ -2,10 +2,7 @@
 
 " Vundle ============================================================
 " Make sure you have Vundle installed:
-" git clone https://github.com/preservim/nerdtree.git
-" ~/.vim/pack/vendor/start/nerdtree
-" vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
-
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
