@@ -14,5 +14,6 @@ bash install_linux.sh
 
 ## Windows
 
-`install_windows.bat`
-
+```
+install_windows.bat
+```
