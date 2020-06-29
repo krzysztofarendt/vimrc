@@ -141,7 +141,7 @@ set expandtab
 colorscheme onedark
 
 " Line numbers
-set number
+nnoremap <F6> :set number!<CR>
 
 " Cursor line
 set cursorline
