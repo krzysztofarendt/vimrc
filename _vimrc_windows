@@ -141,9 +141,14 @@ set expandtab
 "   ~/.vim/colors/onedark.vim and
 "   ~/.vim/autoload/onedark.vim
 " )
-colorscheme onedark
+" colorscheme onedark
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ }
+colorscheme onehalflight
 
 " Line numbers
+set number
 nnoremap <F6> :set number!<CR>
 
 " Cursor line
