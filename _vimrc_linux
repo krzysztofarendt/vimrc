@@ -20,7 +20,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'vim-scripts/indentpython.vim'
- 
+Plugin 'davidhalter/jedi-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -134,15 +135,11 @@ set shiftwidth=4
 set expandtab
 
 " Custom color scheme
-" (be sure to have:
-"   ~/.vim/colors/onedark.vim and
-"   ~/.vim/autoload/onedark.vim
-" )
-" colorscheme onedark
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
-colorscheme onehalflight
+" colorscheme onehalflight
+colorscheme onedark
 
 " Line numbers
 set number
@@ -154,8 +151,7 @@ set cursorline
 " Encoding
 set encoding=utf-8
 
-" Remove all trailing whitespace by pressing F5 and when saving
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" Remove all trailing whitespace upon saving
 autocmd BufWritePre * %s/\s\+$//e
 
 " NERDTree shortcut
@@ -167,5 +163,5 @@ set foldmethod=indent
 set foldlevel=99
 
 " Enable folding with the spacebar
+" Press zR to unfold all
 nnoremap <space> za
-nnoremap <C-space> zR
