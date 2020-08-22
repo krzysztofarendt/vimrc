@@ -157,8 +157,8 @@ set encoding=utf-8
 autocmd BufWritePre * %s/\s\+$//e
 
 " NERDTree shortcut
-imap <F7> <ESC>:NERDTreeFocus<CR>
-nmap <F7> :NERDTreeFocus<CR>
+inoremap <F7> <ESC>:NERDTreeToggle<CR>
+nnoremap <F7> :NERDTreeToggle<CR>
 
 " Enable folding
 set foldmethod=indent
