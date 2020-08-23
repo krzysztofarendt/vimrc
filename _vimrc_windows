@@ -169,6 +169,16 @@ set foldlevel=99
 " Press zR to unfold all
 nnoremap <space> za
 
+
+" Press ESC to exit to the normal mode while in terminal
+tnoremap <Esc> <C-W>N
+
+" Disable arrow keys in all modes except insert
+noremap <Left> <nop>
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Right> <nop>
+
 " Only Windows (gVim)
 set guifont=Consolas:h12
 set langmenu=en_US

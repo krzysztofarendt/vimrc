@@ -194,3 +194,12 @@ function! SyntasticToggle()
         let g:syntastic_is_open = 1
     endif
 endfunction
+
+" Press ESC to exit to the normal mode while in terminal
+tnoremap <Esc> <C-W>N
+
+" Disable arrow keys in all modes except insert
+noremap <Left> <nop>
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Right> <nop>
