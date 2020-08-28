@@ -171,7 +171,8 @@ nnoremap <space> za
 
 
 " Press ESC to exit to the normal mode while in terminal
-tnoremap <Esc> <C-W>N
+" (it messes up with the built-in terminal)
+" tnoremap <Esc> <C-W>N
 
 " Disable arrow keys in all modes except insert
 noremap <Left> <nop>
