@@ -182,7 +182,8 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 
 " Run syntastic check
 nnoremap <F2> :SyntasticCheck<CR>
-map <F3> <ESC>:call SyntasticToggle()<CR>
+nnoremap <F3> :SyntasticReset<CR>
+nnoremap <F4> <ESC>:call SyntasticToggle()<CR>
 
 let g:syntastic_is_open = 0
 function! SyntasticToggle()
