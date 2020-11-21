@@ -20,7 +20,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
@@ -140,6 +141,7 @@ set expandtab
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
+
 " colorscheme onehalflight
 colorscheme onedark
 
@@ -156,6 +158,9 @@ set encoding=utf-8
 " Remove all trailing whitespace upon saving
 autocmd BufWritePre * %s/\s\+$//e
 
+" Find files recursively
+set path+=**
+
 " NERDTree shortcut
 inoremap <F7> <ESC>:NERDTreeToggle<CR>
 nnoremap <F7> :NERDTreeToggle<CR>
@@ -169,6 +174,11 @@ set foldlevel=99
 " Enable folding with the spacebar
 " Press zR to unfold all
 nnoremap <space> za
+
+" YouCompleteMe
+nmap <leader>d <plug>(YCMHover)
+nnoremap <Leader>g :YcmCompleter GoTo<CR>
+nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
 
 " Syntastic initialization
 set statusline+=%#warningmsg#
