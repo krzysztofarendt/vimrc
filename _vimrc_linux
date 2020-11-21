@@ -20,8 +20,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'vim-scripts/indentpython.vim'
-" Plugin 'davidhalter/jedi-vim'
-Plugin 'ycm-core/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
+" Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
@@ -176,9 +176,9 @@ set foldlevel=99
 nnoremap <space> za
 
 " YouCompleteMe
-nmap <leader>d <plug>(YCMHover)
-nnoremap <Leader>g :YcmCompleter GoTo<CR>
-nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
+" nmap <leader>d <plug>(YCMHover)
+" nnoremap <Leader>g :YcmCompleter GoTo<CR>
+" nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
 
 " Syntastic initialization
 set statusline+=%#warningmsg#

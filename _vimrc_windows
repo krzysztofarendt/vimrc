@@ -23,7 +23,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'ycm-core/YouCompleteMe'  " check if you have all dependencies installed
+Plugin 'davidhalter/jedi-vim'
+" Plugin 'ycm-core/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -177,9 +178,9 @@ set foldlevel=99
 nnoremap <space> za
 
 " YouCompleteMe
-nmap <leader>d <plug>(YCMHover)
-nnoremap <Leader>g :YcmCompleter GoTo<CR>
-nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
+" nmap <leader>d <plug>(YCMHover)
+" nnoremap <Leader>g :YcmCompleter GoTo<CR>
+" nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
 
 " Press ESC to exit to the normal mode while in terminal
 " (it messes up with the built-in terminal)
