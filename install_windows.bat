@@ -12,5 +12,6 @@ vim +PluginInstall +qall
 
 Rem YouCompleteMe compilation (make sure you have all dependencies and python-capable Vim)
 Rem Comment these lines if you want to switch off YCM
+C:
 cd %USERPROFILE%\vimfiles\bundle\YouCompleteMe
 python install.py --all
