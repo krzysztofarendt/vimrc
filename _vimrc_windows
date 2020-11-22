@@ -210,6 +210,9 @@ let g:lightline = {
       \ }
       \ }
 
+" Replace selection with register
+let @r = '"xd"0P'
+
 " Only Windows (gVim)
 set guifont=Consolas:h12
 set langmenu=en_US

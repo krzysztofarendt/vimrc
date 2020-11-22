@@ -235,3 +235,6 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
       \ }
       \ }
+
+" Replace selection with register
+let @r = '"xd"0P'
