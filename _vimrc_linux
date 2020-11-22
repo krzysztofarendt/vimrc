@@ -138,11 +138,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Custom color scheme
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ }
-
 " colorscheme onehalflight
 colorscheme onedark
 
