@@ -18,7 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'  " :Git commands
-Plugin 'preservim/nerdtree'  " file explorer
+" Plugin 'preservim/nerdtree'  " file explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
@@ -195,6 +195,18 @@ let g:slime_vimterminal_cmd = "ipython"
 
 " Select cell for vim-slime
 let @c = '/#%%NVnk'
+
+" netrw
+let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_banner=0
+let g:netrw_browse_split=0
+
+" lightline: show absolute path
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \ }
+      \ }
 
 " Only Windows (gVim)
 set guifont=Consolas:h12
