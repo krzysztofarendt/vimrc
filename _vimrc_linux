@@ -217,3 +217,12 @@ noremap <Left> <nop>
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Right> <nop>
+
+
+" IPython macros
+" Copy cell surrounded by %%
+let @c = '/%%NVnky'
+" Run cell in IPython in the right pane
+let @r = 'l""h'
+" Open IPython pane
+let @i = ':vert termlsource venv/bin/act	ipythonh'
