@@ -218,7 +218,6 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Right> <nop>
 
-
 " IPython macros
 " Copy cell surrounded by %%
 let @c = '/%%NVnky'
