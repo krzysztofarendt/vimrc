@@ -25,6 +25,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'davidhalter/jedi-vim'
 " Plugin 'ycm-core/YouCompleteMe'
+Plugin 'jpalardy/vim-slime'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -191,6 +192,10 @@ noremap <Left> <nop>
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Right> <nop>
+
+" vim-slime
+let g:slime_target = "vimterminal"
+let g:slime_python_ipython = 1
 
 " Only Windows (gVim)
 set guifont=Consolas:h12
