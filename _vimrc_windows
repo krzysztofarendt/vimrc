@@ -200,6 +200,8 @@ let @c = '/#%%NVnk'
 let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_banner=0
 let g:netrw_browse_split=0
+noremap <F7> :Exp<cr>
+noremap <F8> :Vex<cr>
 
 " lightline: show absolute path
 let g:lightline = {
