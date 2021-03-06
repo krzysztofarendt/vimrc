@@ -127,7 +127,7 @@ set shiftwidth=4
 set expandtab
 
 " Choose color scheme
-colorscheme onehalflight
+colorscheme ka
 " colorscheme onedark
 
 " Fix colors in Windows terminal
