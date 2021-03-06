@@ -19,9 +19,12 @@ let colors_name="onehalflight"
 
 let s:black       = { "gui": "#383a42", "cterm": "237" }
 let s:red         = { "gui": "#e45649", "cterm": "167" }
+let s:pink        = { "gui": "#ffd7ff", "cterm": "225" }
 let s:green       = { "gui": "#50a14f", "cterm": "71" }
+let s:light_green = { "gui": "#e6ffee", "cterm": "158" }
 let s:yellow      = { "gui": "#c18401", "cterm": "136" }
 let s:blue        = { "gui": "#0184bc", "cterm": "31" }
+let s:light_blue  = { "gui": "#afffff", "cterm": "159" }
 let s:purple      = { "gui": "#a626a4", "cterm": "127" }
 let s:cyan        = { "gui": "#0997b3", "cterm": "31" }
 let s:white       = { "gui": "#fafafa", "cterm": "231" }
@@ -70,10 +73,10 @@ call s:h("CursorLine", "", s:cursor_line, "")
 call s:h("LineNr", s:gutter_fg, s:gutter_bg, "")
 call s:h("CursorLineNr", s:fg, "", "")
 
-call s:h("DiffAdd", s:green, "", "")
-call s:h("DiffChange", s:yellow, "", "")
-call s:h("DiffDelete", s:red, "", "")
-call s:h("DiffText", s:blue, "", "")
+call s:h("DiffAdd", s:green, s:light_green, "")
+call s:h("DiffChange", s:yellow, s:light_blue, "")
+call s:h("DiffDelete", s:red, s:pink, "")
+call s:h("DiffText", s:blue, s:light_blue, "")
 
 call s:h("IncSearch", s:bg, s:yellow, "")
 call s:h("Search", s:bg, s:yellow, "")
@@ -169,8 +172,8 @@ call s:h("GitGutterDelete", s:red, s:gutter_bg, "")
 call s:h("GitGutterChange", s:yellow, s:gutter_bg, "")
 call s:h("GitGutterChangeDelete", s:red, s:gutter_bg, "")
 " Fugitive
-call s:h("diffAdded", s:green, "", "")
-call s:h("diffRemoved", s:red, "", "")
+call s:h("diffAdded", s:green, s:light_green, "")
+call s:h("diffRemoved", s:red, s:pink, "")
 " }
 
 
@@ -218,3 +221,4 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
     let g:terminal_color_foreground = s:fg.gui
   endif
 " }
+

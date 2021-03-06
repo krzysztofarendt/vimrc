@@ -19,11 +19,10 @@ Plugin 'preservim/nerdtree'  " file explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
-Plugin 'vim-scripts/indentpython.vim'
 Plugin 'davidhalter/jedi-vim'
-" Plugin 'ycm-core/YouCompleteMe'
 Plugin 'jpalardy/vim-slime'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'vim-scripts/indentpython.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -40,12 +39,6 @@ filetype plugin indent on    " required
 
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line =========================
-
-if exists('g:loaded_sensible') || &compatible
-  finish
-else
-  let g:loaded_sensible = 'yes'
-endif
 
 if has('autocmd')
   filetype plugin indent on
@@ -95,16 +88,8 @@ if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 endif
 
-if v:version > 703 || v:version == 703 && has("patch541")
-  set formatoptions+=j " Delete comment character when joining commented lines
-endif
-
 if has('path_extra')
   setglobal tags-=./tags tags-=./tags; tags^=./tags;
-endif
-
-if &shell =~# 'fish$' && (v:version < 704 || v:version == 704 && !has('patch276'))
-  set shell=/usr/bin/env\ bash
 endif
 
 set autoread
@@ -122,24 +107,28 @@ set sessionoptions-=options
 set viewoptions-=options
 
 " Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^Eterm'
-  set t_Co=16
-endif
-
-if empty(mapcheck('<C-U>', 'i'))
-  inoremap <C-U> <C-G>u<C-U>
-endif
-if empty(mapcheck('<C-W>', 'i'))
-  inoremap <C-W> <C-G>u<C-W>
-endif
+" if &t_Co == 8 && $TERM !~# '^Eterm'
+"   set t_Co=16
+" endif
+"
+" if empty(mapcheck('<C-U>', 'i'))
+"   inoremap <C-U> <C-G>u<C-U>
+" endif
+" if empty(mapcheck('<C-W>', 'i'))
+"   inoremap <C-W> <C-G>u<C-W>
+" endif
 
 " Tab -> 4 spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" colorscheme onehalflight
-colorscheme onedark
+" Choose color scheme
+colorscheme onehalflight
+" colorscheme onedark
+
+" Fix colors in Windows terminal
+" set termguicolors
 
 " Line numbers
 set number
@@ -155,7 +144,7 @@ set encoding=utf-8
 autocmd BufWritePre * %s/\s\+$//e
 
 " Find files recursively
-set path+=**
+" set path+=**
 
 " NERDTree shortcut
 inoremap <F7> <ESC>:NERDTreeToggle<CR>
