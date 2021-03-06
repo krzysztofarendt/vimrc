@@ -193,7 +193,8 @@ let g:netrw_browse_split=0
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
-      \ }
+      \ },
+      \ 'colorscheme': 'one',
       \ }
 
 " Replace selection with register

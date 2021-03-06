@@ -167,7 +167,7 @@ nnoremap <space> za
 
 " Syntastic initialization
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
@@ -222,7 +222,8 @@ let g:netrw_browse_split=0
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
-      \ }
+      \ },
+      \ 'colorscheme': 'one',
       \ }
 
 " Replace selection with register
