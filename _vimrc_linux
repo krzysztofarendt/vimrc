@@ -15,12 +15,15 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'  " :Git commands
-Plugin 'preservim/nerdtree'  " file explorer
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jpalardy/vim-slime'
+
+" Currently unused plugins
+" ------------------------
+" Plugin 'preservim/nerdtree'  " file explorer
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'ycm-core/YouCompleteMe'
 " Plugin 'vim-scripts/indentpython.vim'
 
@@ -127,9 +130,6 @@ set expandtab
 colorscheme ka
 " colorscheme onedark
 
-" Fix colors in Windows terminal
-" set termguicolors
-
 " Line numbers
 set number
 nnoremap <F6> :set number!<CR>
@@ -147,10 +147,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " set path+=**
 
 " NERDTree shortcut
-inoremap <F7> <ESC>:NERDTreeToggle<CR>
-nnoremap <F7> :NERDTreeToggle<CR>
-nnoremap <F8> :NERDTreeFind<CR>
-inoremap <F8> <ESC>:NERDTreeFind<CR>
+" inoremap <F7> <ESC>:NERDTreeToggle<CR>
+" nnoremap <F7> :NERDTreeToggle<CR>
+" nnoremap <F8> :NERDTreeFind<CR>
+" inoremap <F8> <ESC>:NERDTreeFind<CR>
 
 " Enable folding
 set foldmethod=indent
@@ -164,38 +164,6 @@ nnoremap <space> za
 " nmap <leader>d <plug>(YCMHover)
 " nnoremap <Leader>g :YcmCompleter GoTo<CR>
 " nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
-
-" Syntastic initialization
-set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-
-" Run syntastic check
-nnoremap <F2> :SyntasticCheck<CR>
-nnoremap <F3> :SyntasticReset<CR>
-nnoremap <F4> <ESC>:call SyntasticToggle()<CR>
-
-let g:syntastic_is_open = 0
-function! SyntasticToggle()
-    if g:syntastic_is_open == 1
-        lclose
-        let g:syntastic_is_open = 0
-    else
-        Errors
-        let g:syntastic_is_open = 1
-    endif
-endfunction
-
-" Press ESC to exit to the normal mode while in terminal
-" (it messes up with the built-in terminal)
-" tnoremap <Esc> <C-W>N
 
 " Disable arrow keys in all modes except insert
 noremap <Left> <nop>
@@ -228,3 +196,7 @@ let g:lightline = {
 
 " Replace selection with register
 let @r = '"xd"0P'
+
+" Temporary workaround for entering vim in replace mode on Win10/WSL
+" https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
+set t_u7=

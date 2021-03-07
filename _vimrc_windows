@@ -18,12 +18,15 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'  " :Git commands
-Plugin 'preservim/nerdtree'  " file explorer
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jpalardy/vim-slime'
+
+" Currently unused plugins
+" ------------------------
+" Plugin 'preservim/nerdtree'  " file explorer
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'ycm-core/YouCompleteMe'
 " Plugin 'vim-scripts/indentpython.vim'
 
@@ -150,10 +153,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " set path+=**
 
 " NERDTree shortcut
-inoremap <F7> <ESC>:NERDTreeToggle<CR>
-nnoremap <F7> :NERDTreeToggle<CR>
-nnoremap <F8> :NERDTreeFind<CR>
-inoremap <F8> <ESC>:NERDTreeFind<CR>
+" inoremap <F7> <ESC>:NERDTreeToggle<CR>
+" nnoremap <F7> :NERDTreeToggle<CR>
+" nnoremap <F8> :NERDTreeFind<CR>
+" inoremap <F8> <ESC>:NERDTreeFind<CR>
 
 " Enable folding
 set foldmethod=indent
