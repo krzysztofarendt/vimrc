@@ -183,7 +183,8 @@ let g:slime_vimterminal_cmd = "ipython"
 " let g:slime_python_ipython = 1
 
 " Select cell for vim-slime
-let @c = '/#%%NVnk'
+let @c = '/#%%
+NVnk'
 
 " netrw
 let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
@@ -202,6 +203,9 @@ let g:lightline = {
 
 " Replace selection with register
 let @r = '"xd"0P'
+
+" Syntax highlighting in .md files                                                                                                                                                                       
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " Only Windows (gVim)
 set guifont=Consolas:h12
