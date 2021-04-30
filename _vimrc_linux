@@ -177,7 +177,8 @@ let g:slime_vimterminal_cmd = "ipython"
 " let g:slime_python_ipython = 1
 
 " Select cell for vim-slime
-let @c = '/#%%NVnk'
+let @c = '/#%%
+NVnk'
 
 " netrw
 let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
@@ -200,3 +201,6 @@ let @r = '"xd"0P'
 " Temporary workaround for entering vim in replace mode on Win10/WSL
 " https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
 set t_u7=
+
+" Syntax highlighting in .md files                                                                                                                                                                       
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
