@@ -19,6 +19,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jpalardy/vim-slime'
+Plugin 'mechatroner/rainbow_csv'
 
 " Currently unused plugins
 " ------------------------
