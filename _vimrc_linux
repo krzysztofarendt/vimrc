@@ -185,8 +185,8 @@ let g:slime_vimterminal_cmd = "ipython"
 " let g:slime_python_ipython = 1
 
 " Select cell for vim-slime
-let @c = '/#%%
-NVnk'
+" let @c = '/#%%
+" NVnk'  " Not used and seems to be broken
 
 " netrw
 let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
