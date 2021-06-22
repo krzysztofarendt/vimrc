@@ -182,6 +182,9 @@ noremap <Right> <nop>
 noremap j gj
 noremap k gk
 
+" Do not break words when wrapping
+set linebreak
+
 " vim-slime
 let g:slime_target = "vimterminal"
 let g:slime_vimterminal_cmd = "ipython"
