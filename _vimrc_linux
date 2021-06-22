@@ -172,6 +172,10 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Right> <nop>
 
+" Allow moving up and down within wrapped lines
+noremap j gj
+noremap k gk
+
 " vim-slime
 let g:slime_target = "vimterminal"
 let g:slime_vimterminal_cmd = "ipython"
