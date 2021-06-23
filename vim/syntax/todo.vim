@@ -10,6 +10,7 @@ endif
 syn keyword _TaskKeys TASK
 syn keyword _TodoKeys TODO
 syn keyword _DoneKeys DONE
+syn keyword _WorkKeys WORK
 syn keyword _NoteKeys NOTE
 
 " Matches
@@ -23,6 +24,7 @@ syn region _CustomReg start="/\*" end="\*/" contains=_CommentMatch
 hi def link _TaskKeys    Statement
 hi def link _TodoKeys    DiffDelete
 hi def link _DoneKeys    DiffAdd
+hi def link _WorkKeys    Statement
 hi def link _NoteKeys    Type
 hi def link _CommentMatch Comment
 hi def link _TitleMatch  Constant
