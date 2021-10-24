@@ -23,10 +23,10 @@ Plugin 'mechatroner/rainbow_csv'
 
 " Currently unused plugins
 " ------------------------
-" Plugin 'preservim/nerdtree'  " file explorer
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
-" Plugin 'ycm-core/YouCompleteMe'
-" Plugin 'vim-scripts/indentpython.vim'
+Plugin 'preservim/nerdtree'  " file explorer
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'vim-scripts/indentpython.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -148,10 +148,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " set path+=**
 
 " NERDTree shortcut
-" inoremap <F7> <ESC>:NERDTreeToggle<CR>
-" nnoremap <F7> :NERDTreeToggle<CR>
-" nnoremap <F8> :NERDTreeFind<CR>
-" inoremap <F8> <ESC>:NERDTreeFind<CR>
+inoremap <F7> <ESC>:NERDTreeToggle<CR>
+nnoremap <F7> :NERDTreeToggle<CR>
+nnoremap <F8> :NERDTreeFind<CR>
+inoremap <F8> <ESC>:NERDTreeFind<CR>
 
 " Enable folding
 set foldmethod=indent
@@ -213,5 +213,5 @@ let @r = '"xd"0P'
 " https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
 set t_u7=
 
-" Syntax highlighting in .md files                                                                                                                                                                       
+" Syntax highlighting in .md files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown

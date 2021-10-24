@@ -1,17 +1,14 @@
-" WINDOWS VERSION
+" LINUX VERSION
 
 " Vundle ============================================================
-" Make sure to have git and curl installed and accessible from terminal
 " Make sure you have Vundle installed:
-" cd %USERPROFILE%
-" git clone https://github.com/VundleVim/Vundle.vim.git %USERPROFILE%/vimfiles/bundle/Vundle.vim
-
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
-call vundle#begin('$HOME/vimfiles/bundle/')
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -26,10 +23,10 @@ Plugin 'mechatroner/rainbow_csv'
 
 " Currently unused plugins
 " ------------------------
-" Plugin 'preservim/nerdtree'  " file explorer
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
-" Plugin 'ycm-core/YouCompleteMe'
-" Plugin 'vim-scripts/indentpython.vim'
+Plugin 'preservim/nerdtree'  " file explorer
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'vim-scripts/indentpython.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -131,11 +128,8 @@ set shiftwidth=4
 set expandtab
 
 " Choose color scheme
-colorscheme ka
-" colorscheme onedark
-
-" Fix colors in Windows terminal
-set termguicolors
+" colorscheme ka
+colorscheme onedark
 
 " Line numbers
 set number
@@ -154,10 +148,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " set path+=**
 
 " NERDTree shortcut
-" inoremap <F7> <ESC>:NERDTreeToggle<CR>
-" nnoremap <F7> :NERDTreeToggle<CR>
-" nnoremap <F8> :NERDTreeFind<CR>
-" inoremap <F8> <ESC>:NERDTreeFind<CR>
+noremap <F7> <ESC>:NERDTreeToggle<CR>
+noremap <F7> :NERDTreeToggle<CR>
+noremap <F8> :NERDTreeFind<CR>
+noremap <F8> <ESC>:NERDTreeFind<CR>
 
 " Enable folding
 set foldmethod=indent
@@ -215,12 +209,14 @@ let g:lightline = {
 " Replace selection with register
 let @r = '"xd"0P'
 
+" Temporary workaround for entering vim in replace mode on Win10/WSL
+" https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
+set t_u7=
+
 " Syntax highlighting in .md files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
-" Only Windows (gVim)
-set guifont=Consolas:h12
-set langmenu=en_US
-let $LANG = 'en_US'
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
+" Cursor shape
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[3 q"
+let &t_EI = "\<Esc>[2 q"
