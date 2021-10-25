@@ -23,10 +23,10 @@ Plugin 'jpalardy/vim-slime'
 Plugin 'mechatroner/rainbow_csv'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'davidhalter/jedi-vim'
 
 " Currently unused plugins
 " ------------------------
-" Plugin 'davidhalter/jedi-vim'
 " Plugin 'ycm-core/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
