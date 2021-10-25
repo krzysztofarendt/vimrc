@@ -23,6 +23,7 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'jpalardy/vim-slime'
 Plugin 'mechatroner/rainbow_csv'
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " Currently unused plugins
 " ------------------------
@@ -128,8 +129,10 @@ set shiftwidth=4
 set expandtab
 
 " Choose color scheme
-colorscheme ka
+" colorscheme ka
 " colorscheme onedark
+set background=dark
+colorscheme PaperColor
 
 " Line numbers
 set number
