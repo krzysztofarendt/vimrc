@@ -19,7 +19,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'preservim/nerdtree'  " file explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'ycm-core/YouCompleteMe'
 Plugin 'jpalardy/vim-slime'
 Plugin 'mechatroner/rainbow_csv'
 Plugin 'vim-scripts/indentpython.vim'
@@ -27,7 +26,8 @@ Plugin 'NLKNguyen/papercolor-theme'
 
 " Currently unused plugins
 " ------------------------
-"Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
+" Plugin 'ycm-core/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
