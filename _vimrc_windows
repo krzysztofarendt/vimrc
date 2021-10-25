@@ -23,6 +23,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'mechatroner/rainbow_csv'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'davidhalter/jedi-vim'
 
 " Currently unused plugins
 " ------------------------
@@ -30,8 +31,8 @@ Plugin 'NLKNguyen/papercolor-theme'
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'ycm-core/YouCompleteMe'
 " Plugin 'vim-scripts/indentpython.vim'
-" Plugin 'davidhalter/jedi-vim'
-Plugin 'jpalardy/vim-slime'
+
+" Plugin 'jpalardy/vim-slime'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
