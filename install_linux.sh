@@ -11,8 +11,8 @@ cp _vimrc_linux ~/.vimrc
 vim +PluginInstall +qall
 
 # Initialize jedi-vim
-cd ~/.vim/bundle/jedi-vim
-git submodule update --init --recursive
+# cd ~/.vim/bundle/jedi-vim
+# git submodule update --init --recursive
 
 # Compile YCM
 # cd ~/.vim/bundle/YouCompleteMe
