@@ -20,9 +20,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'  " :Git commands
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'jpalardy/vim-slime'
 Plugin 'mechatroner/rainbow_csv'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " Currently unused plugins
 " ------------------------
@@ -30,6 +30,8 @@ Plugin 'mechatroner/rainbow_csv'
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'ycm-core/YouCompleteMe'
 " Plugin 'vim-scripts/indentpython.vim'
+" Plugin 'davidhalter/jedi-vim'
+Plugin 'jpalardy/vim-slime'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -131,8 +133,10 @@ set shiftwidth=4
 set expandtab
 
 " Choose color scheme
-colorscheme ka
+" colorscheme ka
 " colorscheme onedark
+set background=dark
+colorscheme PaperColor
 
 " Fix colors in Windows terminal
 set termguicolors
@@ -189,8 +193,8 @@ set linebreak
 autocmd bufreadpre *.todo setlocal textwidth=80
 
 " vim-slime
-let g:slime_target = "vimterminal"
-let g:slime_vimterminal_cmd = "ipython"
+" let g:slime_target = "vimterminal"
+" let g:slime_vimterminal_cmd = "ipython"
 " let g:slime_python_ipython = 1
 
 " Select cell for vim-slime
