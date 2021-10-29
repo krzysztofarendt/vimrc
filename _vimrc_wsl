@@ -223,3 +223,6 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[3 q"
 let &t_EI = "\<Esc>[2 q"
+
+" Very magic search
+nnoremap / /\v
