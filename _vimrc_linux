@@ -218,3 +218,6 @@ set t_u7=
 
 " Syntax highlighting in .md files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+" Very magic search
+nnoremap / /\v
