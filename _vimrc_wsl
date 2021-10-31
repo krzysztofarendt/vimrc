@@ -24,6 +24,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 
 " Currently unused plugins
 " ------------------------
