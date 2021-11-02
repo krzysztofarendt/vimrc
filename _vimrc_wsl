@@ -153,10 +153,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " set path+=**
 
 " NERDTree shortcut
-noremap <F7> <ESC>:NERDTreeToggle<CR>
-noremap <F7> :NERDTreeToggle<CR>
-noremap <F8> :NERDTreeFind<CR>
-noremap <F8> <ESC>:NERDTreeFind<CR>
+inoremap <F7> <ESC>:NERDTreeToggle<CR>
+nnoremap <F7> :NERDTreeToggle<CR>
+nnoremap <F8> :NERDTreeFind<CR>
+inoremap <F8> <ESC>:NERDTreeFind<CR>
 
 " Enable folding
 set foldmethod=indent
