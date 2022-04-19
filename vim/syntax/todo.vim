@@ -19,6 +19,7 @@ syn match _TitleMatch "#.*$"
 
 " Regions
 syn region _MultiCommentReg start="/\*" end="\*/"
+syn region _MultiCommentReg start="\~\~" end="\~\~"
 syn region _EmphasizeReg start="\*\*" end="\*\*"
 
 " Highlighting rules
