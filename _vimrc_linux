@@ -167,9 +167,10 @@ set foldlevel=99
 nnoremap <space> za
 
 " YouCompleteMe
-" nmap <leader>d <plug>(YCMHover)
-" nnoremap <Leader>g :YcmCompleter GoTo<CR>
-" nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
+" nmap <leader>k <plug>(YCMHover)
+
+" Disable docstring pop-up in jedi-vim
+autocmd FileType python setlocal completeopt-=preview
 
 " Disable arrow keys in all modes except insert
 noremap <Left> <nop>
