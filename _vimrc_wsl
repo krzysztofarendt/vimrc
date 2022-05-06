@@ -192,6 +192,8 @@ autocmd bufreadpre *.todo setlocal textwidth=80
 let g:slime_target = "vimterminal"
 let g:slime_vimterminal_cmd = "ipython"
 " let g:slime_python_ipython = 1
+let g:slime_cell_delimiter = "#%%"
+nmap <leader>c <Plug>SlimeSendCell
 
 " Select cell for vim-slime
 " let @c = '/#%%
