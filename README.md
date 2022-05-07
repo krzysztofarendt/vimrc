@@ -10,7 +10,7 @@ Prerequisites (these commands must be in the PATH):
 ## Linux
 
 ```
-bash install_linux.sh
+install_linux.sh
 ```
 
 ## Windows
