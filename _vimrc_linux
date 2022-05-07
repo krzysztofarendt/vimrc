@@ -113,26 +113,12 @@ endif
 set sessionoptions-=options
 set viewoptions-=options
 
-" Allow color schemes to do bright colors without forcing bold.
-" if &t_Co == 8 && $TERM !~# '^Eterm'
-"   set t_Co=16
-" endif
-"
-" if empty(mapcheck('<C-U>', 'i'))
-"   inoremap <C-U> <C-G>u<C-U>
-" endif
-" if empty(mapcheck('<C-W>', 'i'))
-"   inoremap <C-W> <C-G>u<C-W>
-" endif
-
 " Tab -> 4 spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
 " Choose color scheme
-" colorscheme ka
-" colorscheme onedark
 set background=dark
 colorscheme PaperColor
 
@@ -191,20 +177,13 @@ autocmd bufreadpre *.todo setlocal textwidth=80
 " vim-slime
 let g:slime_target = "vimterminal"
 let g:slime_vimterminal_cmd = "ipython"
-" let g:slime_python_ipython = 1
 let g:slime_cell_delimiter = "#%%"
 nmap <leader>c <Plug>SlimeSendCell
-
-" Select cell for vim-slime
-" let @c = '/#%%
-" NVnk'  " Not used and seems to be broken
 
 " netrw
 let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_banner=0
 let g:netrw_browse_split=0
-" noremap <F7> :Exp<cr>
-" noremap <F8> :Vex<cr>
 
 " lightline: show absolute path
 let g:lightline = {
