@@ -13,7 +13,17 @@ Prerequisites (these commands must be in the PATH):
 install_linux.sh
 ```
 
+## WSL (running in Windows Terminal)
+
+Almost identical as the Linux version. The only difference is the cursor shape fix for Windows Terminal:
+
+```
+install_wsl.sh
+```
+
 ## Windows
+
+Works fine with GVim, but the colors might be broken in Windows Terminal:
 
 ```
 install_windows.bat

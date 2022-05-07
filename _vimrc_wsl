@@ -1,4 +1,4 @@
-" LINUX VERSION
+" WSL VERSION
 
 " Vundle ============================================================
 " Make sure you have Vundle installed:
@@ -206,7 +206,7 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " Very magic search
 nnoremap / /\v
 
-" Cursor shape
+" Fix cursor shape in Windows Terminal
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[3 q"
 let &t_EI = "\<Esc>[2 q"

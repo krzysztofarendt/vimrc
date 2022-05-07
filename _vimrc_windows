@@ -20,19 +20,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'  " :Git commands
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
+Plugin 'preservim/nerdtree'  " file explorer
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mechatroner/rainbow_csv'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'davidhalter/jedi-vim'
-
-" Currently unused plugins
-" ------------------------
-" Plugin 'preservim/nerdtree'  " file explorer
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
-" Plugin 'ycm-core/YouCompleteMe'
-" Plugin 'vim-scripts/indentpython.vim'
-
-" Plugin 'jpalardy/vim-slime'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -116,31 +109,18 @@ endif
 set sessionoptions-=options
 set viewoptions-=options
 
-" Allow color schemes to do bright colors without forcing bold.
-" if &t_Co == 8 && $TERM !~# '^Eterm'
-"   set t_Co=16
-" endif
-"
-" if empty(mapcheck('<C-U>', 'i'))
-"   inoremap <C-U> <C-G>u<C-U>
-" endif
-" if empty(mapcheck('<C-W>', 'i'))
-"   inoremap <C-W> <C-G>u<C-W>
-" endif
-
 " Tab -> 4 spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
 " Choose color scheme
-" colorscheme ka
-" colorscheme onedark
 set background=dark
 colorscheme PaperColor
 
 " Fix colors in Windows terminal
-set termguicolors
+" (often does not work as expected, so turning it on is manual)
+" set termguicolors
 
 " Line numbers
 set number
@@ -159,10 +139,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " set path+=**
 
 " NERDTree shortcut
-" inoremap <F7> <ESC>:NERDTreeToggle<CR>
-" nnoremap <F7> :NERDTreeToggle<CR>
-" nnoremap <F8> :NERDTreeFind<CR>
-" inoremap <F8> <ESC>:NERDTreeFind<CR>
+inoremap <F7> <ESC>:NERDTreeToggle<CR>
+nnoremap <F7> :NERDTreeToggle<CR>
+nnoremap <F8> :NERDTreeFind<CR>
+inoremap <F8> <ESC>:NERDTreeFind<CR>
 
 " Enable folding
 set foldmethod=indent
@@ -171,11 +151,6 @@ set foldlevel=99
 " Enable folding with the spacebar
 " Press zR to unfold all
 nnoremap <space> za
-
-" YouCompleteMe
-" nmap <leader>d <plug>(YCMHover)
-" nnoremap <Leader>g :YcmCompleter GoTo<CR>
-" nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
 
 " Disable arrow keys in all modes except insert
 noremap <Left> <nop>
@@ -193,21 +168,10 @@ set linebreak
 " Line breaks at column 80 for *.todo files
 autocmd bufreadpre *.todo setlocal textwidth=80
 
-" vim-slime
-" let g:slime_target = "vimterminal"
-" let g:slime_vimterminal_cmd = "ipython"
-" let g:slime_python_ipython = 1
-
-" Select cell for vim-slime
-" let @c = '/#%%
-" NVnk'  " Not used and seems to be broken
-
 " netrw
 let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_banner=0
 let g:netrw_browse_split=0
-" noremap <F7> :Exp<cr>
-" noremap <F8> :Vex<cr>
 
 " lightline: show absolute path
 let g:lightline = {
@@ -232,3 +196,8 @@ source $VIMRUNTIME/menu.vim
 
 " Very magic search
 nnoremap / /\v
+
+" Fix cursor shape in Windows Terminal
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[3 q"
+let &t_EI = "\<Esc>[2 q"
