@@ -27,9 +27,16 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 
-" Currently unused plugins
-" ------------------------
-" Plugin 'ycm-core/YouCompleteMe'
+" YouCompleteMe plugin to be installed manually
+" (below commands for Python/C++ support)
+" -----------------------------------------------------------
+" > apt install build-essential cmake vim-nox python3-dev
+" > cd ~/.vim/bundle/YouCompleteMe
+" > python3 install.py ---clangd-completer
+" -----------------------------------------------------------
+" Subsequently, uncomment below line, restart & :PluginInstall
+" -----------------------------------------------------------
+" Plugin 'ycm-core/YouCompleteMe
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -152,9 +159,6 @@ set foldlevel=99
 " Press zR to unfold all
 nnoremap <space> za
 
-" YouCompleteMe
-" nmap <leader>k <plug>(YCMHover)
-
 " Disable docstring pop-up in jedi-vim
 autocmd FileType python setlocal completeopt-=preview
 
@@ -210,3 +214,14 @@ nnoremap / /\v
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[3 q"
 let &t_EI = "\<Esc>[2 q"
+
+" Settings to be unlocked manually ==================================
+
+" YouCompleteMe - enable popup documentation
+" nmap <leader>k <plug>(YCMHover)
+
+" Highlight particular column
+" set colorcolumn=80
+
+" Enable text wrapping
+" set textwidth=80

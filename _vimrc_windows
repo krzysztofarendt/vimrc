@@ -152,6 +152,9 @@ set foldlevel=99
 " Press zR to unfold all
 nnoremap <space> za
 
+" Disable docstring pop-up in jedi-vim
+autocmd FileType python setlocal completeopt-=preview
+
 " Disable arrow keys in all modes except insert
 noremap <Left> <nop>
 noremap <Up> <nop>
@@ -201,3 +204,11 @@ nnoremap / /\v
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[3 q"
 let &t_EI = "\<Esc>[2 q"
+
+" Settings to be unlocked manually ==================================
+
+" Highlight particular column
+" set colorcolumn=80
+
+" Enable text wrapping
+" set textwidth=80
