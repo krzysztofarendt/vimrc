@@ -29,7 +29,7 @@ Plugin 'junegunn/fzf.vim'
 
 " YouCompleteMe plugin to be installed manually
 " -----------------------------------------------------------
-" Plugin 'ycm-core/YouCompleteMe  " Uncomment, restart, :PluginInstall
+" Plugin 'ycm-core/YouCompleteMe' " Uncomment, restart, :PluginInstall
 " -----------------------------------------------------------
 " Subsequently, run below lines for Python/C++ support:
 " > apt install build-essential cmake vim-nox python3-dev
