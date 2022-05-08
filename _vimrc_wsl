@@ -208,6 +208,9 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " Very magic search
 nnoremap / /\v
 
+" Source .vimrc with F5
+noremap <F5> <ESC>:source ~/.vimrc<CR>
+
 " Fix cursor shape in Windows Terminal
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[3 q"
