@@ -28,15 +28,13 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 
 " YouCompleteMe plugin to be installed manually
-" (below commands for Python/C++ support)
 " -----------------------------------------------------------
+" Plugin 'ycm-core/YouCompleteMe  " Uncomment, restart, :PluginInstall
+" -----------------------------------------------------------
+" Subsequently, run below lines for Python/C++ support:
 " > apt install build-essential cmake vim-nox python3-dev
 " > cd ~/.vim/bundle/YouCompleteMe
 " > python3 install.py ---clangd-completer
-" -----------------------------------------------------------
-" Subsequently, uncomment below line, restart & :PluginInstall
-" -----------------------------------------------------------
-" Plugin 'ycm-core/YouCompleteMe
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
