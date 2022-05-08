@@ -220,4 +220,4 @@ nnoremap / /\v
 " Select link in visual mode and press \p
 " To install mpv:
 " > sudo apt install mpv
-" vnoremap <leader>p y:!mpv --ytdl-format="bestvideo[width<=640]+worstaudio" <C-R>" <CR>
+" vnoremap <leader>p y:!mpv --ytdl-format="bestvideo[width<=640]+worstaudio" <C-R>"<CR>
