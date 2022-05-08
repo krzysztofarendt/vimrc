@@ -14,8 +14,4 @@ vim +PluginInstall +qall
 cd ~/.vim/bundle/jedi-vim
 git submodule update --init --recursive
 
-# Compile YCM
-# cd ~/.vim/bundle/YouCompleteMe
-# python3 install.py --all
-
 cd ~
