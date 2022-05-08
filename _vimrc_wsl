@@ -213,6 +213,35 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[3 q"
 let &t_EI = "\<Esc>[2 q"
 
+
+" Play video with mpv ===============================================
+" Play selected audio or video with mpv
+" Works with files, YouTube links, and YouTube IDs
+" Select link the in visual mode and press \p
+" e.g.
+" - https://www.youtube.com/watch?v=CD-E-LDc384
+" - CD-E-LDc384
+" - /path/to/file.mp4
+" - /path/to/file.wav
+"
+" To install mpv:
+" > sudo apt install mpv
+" ===================================================================
+function! PlayVideo(path)
+    let l:spl_path = split(a:path, '\.')
+    if len(l:spl_path) > 1
+        " Path to file or link
+        execute ":!mpv --ytdl-format='bestvideo[width<=640]+worstaudio' " . a:path
+    else
+        " YouTube ID
+        let l:yt_link = "https://www.youtube.com/watch?v=" . a:path
+        execute ":!mpv --ytdl-format='bestvideo[width<=640]+worstaudio' " . l:yt_link
+    endif
+endfunction
+
+vnoremap <leader>p y:call PlayVideo("<C-R>"")<CR>
+
+
 " Settings to be unlocked manually ==================================
 
 " YouCompleteMe - enable popup documentation
@@ -223,10 +252,3 @@ let &t_EI = "\<Esc>[2 q"
 
 " Enable text wrapping
 " set textwidth=80
-
-" Play selected audio or video with mpv
-" Works with files and YouTube links
-" Select link in visual mode and press \p
-" To install mpv:
-" > sudo apt install mpv
-" vnoremap <leader>p y:!mpv --ytdl-format="bestvideo[width<=640]+worstaudio" <C-R>"<CR>
