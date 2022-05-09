@@ -234,11 +234,11 @@ function! PlayVideo(path)
     let l:spl_path = split(a:path, '\.')
     if len(l:spl_path) > 1
         " Path to file or link
-        execute ":!mpv --ytdl-format='bestvideo[width<=640]+worstaudio' " . a:path
+        execute ":!mpv --ytdl-format='(mp4,webm)[width<=640]+worstaudio' " . a:path
     else
         " YouTube ID
         let l:yt_link = "https://www.youtube.com/watch?v=" . a:path
-        execute ":!mpv --ytdl-format='bestvideo[width<=640]+worstaudio' " . l:yt_link
+        execute ":!mpv --ytdl-format='(mp4,webm)[width<=640]+worstaudio' " . l:yt_link
     endif
 endfunction
 
