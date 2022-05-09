@@ -211,10 +211,10 @@ noremap <F5> <ESC>:source ~/.vimrc<CR>
 " Play video with mpv ===============================================
 " Play selected audio or video with mpv
 " Works with files, YouTube links, and YouTube IDs
-" Select link in the visual mode and press \p
+" Select link the in visual mode and press \p
 " e.g.
-" - https://www.youtube.com/watch?v=CD-E-LDc384
-" - CD-E-LDc384
+" - https://www.youtube.com/watch?v=PVyS9JwtFoQ
+" - PVyS9JwtFoQ
 " - /path/to/file.mp4
 " - /path/to/file.wav
 "
@@ -225,11 +225,11 @@ function! PlayVideo(path)
     let l:spl_path = split(a:path, '\.')
     if len(l:spl_path) > 1
         " Path to file or link
-        execute ":!mpv --ytdl-format='(mp4,webm)[width<=640]+worstaudio' " . a:path
+        execute ':term mpv --ytdl-format="(mp4,webm)[width<=640]+worstaudio" ' . a:path
     else
         " YouTube ID
         let l:yt_link = "https://www.youtube.com/watch?v=" . a:path
-        execute ":!mpv --ytdl-format='(mp4,webm)[width<=640]+worstaudio' " . l:yt_link
+        execute ':term mpv --ytdl-format="(mp4,webm)[width<=640]+worstaudio" ' . l:yt_link
     endif
 endfunction
 
