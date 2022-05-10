@@ -189,11 +189,16 @@ let g:netrw_browse_split=0
 
 " lightline: show absolute path
 let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
-      \ },
-      \ 'colorscheme': 'one',
-      \ }
+    \ 'colorscheme': 'one',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'absolutepath', 'modified', ] ],
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'FugitiveHead'
+    \ },
+    \ }
+
+set noshowmode  " get rid of --INSERT-- below status line
 
 " Replace selection with register
 let @r = '"xd"0P'
