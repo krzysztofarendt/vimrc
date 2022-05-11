@@ -211,6 +211,8 @@ nnoremap / /\v
 " Source .vimrc with F5
 noremap <F5> <ESC>:source ~/.vimrc<CR>
 
+" CTRL+N to enter normal mode in terminal
+tnoremap <c-n> <c-w><s-n>
 
 " Play video with mpv ===============================================
 " Play selected audio or video with mpv

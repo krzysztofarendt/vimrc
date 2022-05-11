@@ -215,6 +215,9 @@ nnoremap / /\v
 " Source .vimrc with F5
 noremap <F5> <ESC>:source ~/.vimrc<CR>
 
+" CTRL+N to enter normal mode in terminal
+tnoremap <c-n> <c-w><s-n>
+
 " Fix cursor shape in Windows Terminal
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[3 q"
