@@ -189,7 +189,7 @@ let g:netrw_browse_split=0
 
 " lightline: show absolute path
 let g:lightline = {
-    \ 'colorscheme': 'onedark',
+    \ 'colorscheme': 'powerline',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'absolutepath', 'modified', ] ],
     \ },
