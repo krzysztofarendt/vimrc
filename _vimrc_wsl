@@ -189,7 +189,7 @@ let g:netrw_browse_split=0
 
 " lightline: show absolute path
 let g:lightline = {
-    \ 'colorscheme': 'one',
+    \ 'colorscheme': 'onedark',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'absolutepath', 'modified', ] ],
     \ },
@@ -197,7 +197,6 @@ let g:lightline = {
     \   'gitbranch': 'FugitiveHead'
     \ },
     \ }
-
 set noshowmode  " get rid of --INSERT-- below status line
 
 " Replace selection with register
