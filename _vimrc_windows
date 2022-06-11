@@ -19,7 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'  " :Git commands
 Plugin 'airblade/vim-gitgutter'
-Plugin 'itchyny/lightline.vim'
+" Plugin 'itchyny/lightline.vim'
 Plugin 'preservim/nerdtree'  " file explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mechatroner/rainbow_csv'
@@ -115,8 +115,8 @@ set shiftwidth=4
 set expandtab
 
 " Choose color scheme
-set background=dark
-colorscheme PaperColor
+" set background=dark
+colorscheme onehalflight
 
 " Fix colors in Windows terminal
 " (often does not work as expected, so turning it on is manual)
@@ -179,17 +179,17 @@ let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_banner=0
 let g:netrw_browse_split=0
 
-" lightline: show absolute path
-let g:lightline = {
-    \ 'colorscheme': 'powerline',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'absolutepath', 'modified', ] ],
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'FugitiveHead'
-    \ },
-    \ }
-set noshowmode  " get rid of --INSERT-- below status line
+"" lightline: show absolute path
+"let g:lightline = {
+"    \ 'colorscheme': 'powerline',
+"    \ 'active': {
+"    \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'absolutepath', 'modified', ] ],
+"    \ },
+"    \ 'component_function': {
+"    \   'gitbranch': 'FugitiveHead'
+"    \ },
+"    \ }
+"set noshowmode  " get rid of --INSERT-- below status line
 
 " Replace selection with register
 let @r = '"xd"0P'
