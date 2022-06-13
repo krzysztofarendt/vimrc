@@ -15,7 +15,7 @@ install_linux.sh
 
 ## WSL (running in Windows Terminal)
 
-Almost identical as the Linux version. The only difference is the cursor shape fix for Windows Terminal:
+Almost identical as the Linux version. The differences are the cursor shape fix for Windows Terminal and a clipboard shared between WSL and Windows:
 
 ```
 install_wsl.sh
