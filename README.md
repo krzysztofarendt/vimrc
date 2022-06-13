@@ -23,7 +23,7 @@ install_wsl.sh
 
 ## Windows
 
-Works fine with GVim, but the colors might be broken in Windows Terminal:
+Works equally fine in GVim and in Windows Terminal:
 
 ```
 install_windows.bat
