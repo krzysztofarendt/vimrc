@@ -26,6 +26,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+Plugin 'dhruvasagar/vim-table-mode'
 
 " YouCompleteMe plugin to be installed manually
 " -----------------------------------------------------------

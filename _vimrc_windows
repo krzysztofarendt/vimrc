@@ -26,6 +26,7 @@ Plugin 'mechatroner/rainbow_csv'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'dhruvasagar/vim-table-mode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
