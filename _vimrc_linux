@@ -21,7 +21,6 @@ Plugin 'preservim/nerdtree'  " file explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jpalardy/vim-slime'
 Plugin 'mechatroner/rainbow_csv'
-Plugin 'vim-scripts/indentpython.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }

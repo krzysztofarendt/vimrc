@@ -23,7 +23,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'preservim/nerdtree'  " file explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mechatroner/rainbow_csv'
-Plugin 'vim-scripts/indentpython.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'dhruvasagar/vim-table-mode'
