@@ -59,8 +59,6 @@ if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
 
-" Use :help 'option' to see the documentation for the given option.
-
 set autoindent
 set backspace=indent,eol,start
 set complete-=i
@@ -187,17 +185,17 @@ let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_banner=0
 let g:netrw_browse_split=0
 
-"" lightline: show absolute path
-"let g:lightline = {
-"    \ 'colorscheme': 'powerline',
-"    \ 'active': {
-"    \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'absolutepath', 'modified', ] ],
-"    \ },
-"    \ 'component_function': {
-"    \   'gitbranch': 'FugitiveHead'
-"    \ },
-"    \ }
-"set noshowmode  " get rid of --INSERT-- below status line
+" lightline: show absolute path
+let g:lightline = {
+    \ 'colorscheme': 'powerline',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'absolutepath', 'modified', ] ],
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'FugitiveHead'
+    \ },
+    \ }
+set noshowmode  " get rid of --INSERT-- below status line
 
 " Replace selection with register
 let @r = '"xd"0P'
