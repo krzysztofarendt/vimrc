@@ -16,12 +16,12 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'  " :Git commands
 Plugin 'airblade/vim-gitgutter'
-" Plugin 'itchyny/lightline.vim'
+Plugin 'itchyny/lightline.vim'
 Plugin 'preservim/nerdtree'  " file explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jpalardy/vim-slime'
 Plugin 'mechatroner/rainbow_csv'
-Plugin 'NLKNguyen/papercolor-theme'
+" Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
@@ -124,8 +124,8 @@ set shiftwidth=4
 set expandtab
 
 " Choose color scheme
-" set background=dark
-colorscheme onehalflight
+set background=dark
+colorscheme onehalfdark
 
 " Line numbers
 set number
