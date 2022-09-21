@@ -26,6 +26,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'krzysztofarendt/indentpython.vim'
 
 " YouCompleteMe plugin to be installed manually
 " -----------------------------------------------------------
