@@ -17,8 +17,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'  " :Git commands
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
-Plugin 'preservim/nerdtree'  " file explorer
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'preservim/nerdtree'  " file explorer
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jpalardy/vim-slime'
 Plugin 'mechatroner/rainbow_csv'
 " Plugin 'NLKNguyen/papercolor-theme'
@@ -143,10 +143,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " set path+=**
 
 " NERDTree shortcut
-inoremap <F7> <ESC>:NERDTreeToggle<CR>
-nnoremap <F7> :NERDTreeToggle<CR>
-nnoremap <F8> :NERDTreeFind<CR>
-inoremap <F8> <ESC>:NERDTreeFind<CR>
+" inoremap <F7> <ESC>:NERDTreeToggle<CR>
+" nnoremap <F7> :NERDTreeToggle<CR>
+" nnoremap <F8> :NERDTreeFind<CR>
+" inoremap <F8> <ESC>:NERDTreeFind<CR>
 
 " Enable folding
 set foldmethod=indent
