@@ -20,13 +20,17 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'  " :Git commands
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
-" Plugin 'preservim/nerdtree'  " file explorer
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mechatroner/rainbow_csv'
-" Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'krzysztofarendt/indentpython.vim'
+
+" Optional plugins
+" -----------------------------------------------------------
+" Plugin 'preservim/nerdtree'  " file explorer
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
+" -----------------------------------------------------------
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -115,7 +119,7 @@ set expandtab
 
 " Choose color scheme
 set background=dark
-colorscheme onehalfdark
+colorscheme PaperColor
 
 " Fix colors in Windows terminal
 " (often does not work as expected, so turning it on is manual)

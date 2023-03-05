@@ -17,25 +17,21 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'  " :Git commands
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
-" Plugin 'preservim/nerdtree'  " file explorer
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jpalardy/vim-slime'
 Plugin 'mechatroner/rainbow_csv'
-" Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'krzysztofarendt/indentpython.vim'
 
-" YouCompleteMe plugin to be installed manually
+" Optional plugins
 " -----------------------------------------------------------
-" Plugin 'ycm-core/YouCompleteMe' " Uncomment, restart, :PluginInstall
+" Plugin 'davidhalter/jedi-vim' " Python, works out-of-the-box on most systems
+" Plugin 'ycm-core/YouCompleteMe' " See installation guide - needs to be manually compiled
+" Plugin 'preservim/nerdtree'  " file explorer
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 " -----------------------------------------------------------
-" Subsequently, run below lines for Python/C++ support:
-" > apt install build-essential cmake vim-nox python3-dev
-" > cd ~/.vim/bundle/YouCompleteMe
-" > python3 install.py ---clangd-completer
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -124,7 +120,7 @@ set expandtab
 
 " Choose color scheme
 set background=dark
-colorscheme onehalfdark
+colorscheme PaperColor
 
 " Line numbers
 set number
@@ -262,7 +258,7 @@ vnoremap <leader>p y:call PlayVideo("<C-R>"")<CR>
 " Settings to be unlocked manually ==================================
 
 " YouCompleteMe - enable popup documentation
-" nmap <leader>k <plug>(YCMHover)
+nmap <leader>k <plug>(YCMHover)
 
 " Highlight particular column
 " set colorcolumn=80
