@@ -27,8 +27,8 @@ Plugin 'krzysztofarendt/indentpython.vim'
 
 " Optional plugins
 " -----------------------------------------------------------
-" Plugin 'davidhalter/jedi-vim' " Python, works out-of-the-box on most systems
 " Plugin 'ycm-core/YouCompleteMe' " See installation guide - needs to be manually compiled
+" Plugin 'davidhalter/jedi-vim' " Python, works out-of-the-box on most systems
 " Plugin 'preservim/nerdtree'  " file explorer
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
 " -----------------------------------------------------------
@@ -241,6 +241,7 @@ vnoremap <leader>p y:call PlayVideo("<C-R>"")<CR>
 
 " YouCompleteMe - enable popup documentation
 nmap <leader>k <plug>(YCMHover)
+nmap <leader>d :YcmCompleter GoTo<CR>
 
 " Highlight particular column
 " set colorcolumn=80
