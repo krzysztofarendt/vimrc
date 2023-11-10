@@ -20,7 +20,7 @@ If you do not wish to use YouCompleteMe, you need to comment lines 17-23 in `ins
 
 ### WSL (running in Windows Terminal)
 
-Almost identical as the Linux version. The differences are the cursor shape fix for Windows Terminal and a clipboard shared between WSL and Windows:
+Almost identical to the Linux version. The differences are the cursor shape fix for Windows Terminal and a clipboard shared between WSL and Windows:
 
 If you want to use YouCompleteMe, just run:
 ```
