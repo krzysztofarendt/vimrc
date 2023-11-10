@@ -168,9 +168,6 @@ noremap k gk
 " Do not break words when wrapping
 set linebreak
 
-" Line breaks at column 80 for *.todo files
-" autocmd bufreadpre *.todo setlocal textwidth=80
-
 " vim-slime
 let g:slime_target = "vimterminal"
 let g:slime_vimterminal_cmd = "ipython"
@@ -248,3 +245,6 @@ nmap <leader>d :YcmCompleter GoTo<CR>
 
 " Enable text wrapping
 " set textwidth=80
+
+" Line breaks at column 80 for *.todo files
+" autocmd bufreadpre *.todo setlocal textwidth=80
