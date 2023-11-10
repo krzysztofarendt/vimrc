@@ -30,3 +30,11 @@ Works equally fine in GVim and in Windows Terminal:
 ```
 install_windows.bat
 ```
+
+## Set up git
+```
+git config --global core.editor "vim"
+git config --global merge.tool vimdiff
+git config --global merge.conflictstyle diff3
+git config --global mergetool.prompt false
+```
