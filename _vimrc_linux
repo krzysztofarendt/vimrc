@@ -23,14 +23,14 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'krzysztofarendt/indentpython.vim'
+Plugin 'preservim/nerdtree'  " file explorer
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ycm-core/YouCompleteMe' " Uncomment relevant lines in install_linux.sh
 
 " Optional plugins
 " -----------------------------------------------------------
-" Plugin 'ycm-core/YouCompleteMe' " See installation guide - needs to be manually compiled
+" Plugin 'krzysztofarendt/indentpython.vim'
 " Plugin 'davidhalter/jedi-vim' " Python, works out-of-the-box on most systems
-" Plugin 'preservim/nerdtree'  " file explorer
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
 " -----------------------------------------------------------
 
 " All of your Plugins must be added before the following line
@@ -139,10 +139,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " set path+=**
 
 " NERDTree shortcut
-" inoremap <F7> <ESC>:NERDTreeToggle<CR>
-" nnoremap <F7> :NERDTreeToggle<CR>
-" nnoremap <F8> :NERDTreeFind<CR>
-" inoremap <F8> <ESC>:NERDTreeFind<CR>
+inoremap <F7> <ESC>:NERDTreeToggle<CR>
+nnoremap <F7> :NERDTreeToggle<CR>
+nnoremap <F8> :NERDTreeFind<CR>
+inoremap <F8> <ESC>:NERDTreeFind<CR>
 
 " Enable folding
 set foldmethod=indent
@@ -169,7 +169,7 @@ noremap k gk
 set linebreak
 
 " Line breaks at column 80 for *.todo files
-autocmd bufreadpre *.todo setlocal textwidth=80
+" autocmd bufreadpre *.todo setlocal textwidth=80
 
 " vim-slime
 let g:slime_target = "vimterminal"

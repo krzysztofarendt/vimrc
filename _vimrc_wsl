@@ -23,14 +23,14 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'krzysztofarendt/indentpython.vim'
+Plugin 'preservim/nerdtree'  " file explorer
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ycm-core/YouCompleteMe' " Uncomment relevant lines in install_wsl.sh
 
 " Optional plugins
 " -----------------------------------------------------------
-" Plugin 'ycm-core/YouCompleteMe' " See installation guide - needs to be manually compiled
+" Plugin 'krzysztofarendt/indentpython.vim'
 " Plugin 'davidhalter/jedi-vim' " Python, works out-of-the-box on most systems
-" Plugin 'preservim/nerdtree'  " file explorer
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
 " -----------------------------------------------------------
 
 " All of your Plugins must be added before the following line
@@ -139,10 +139,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " set path+=**
 
 " NERDTree shortcut
-" inoremap <F7> <ESC>:NERDTreeToggle<CR>
-" nnoremap <F7> :NERDTreeToggle<CR>
-" nnoremap <F8> :NERDTreeFind<CR>
-" inoremap <F8> <ESC>:NERDTreeFind<CR>
+inoremap <F7> <ESC>:NERDTreeToggle<CR>
+nnoremap <F7> :NERDTreeToggle<CR>
+nnoremap <F8> :NERDTreeFind<CR>
+inoremap <F8> <ESC>:NERDTreeFind<CR>
 
 " Enable folding
 set foldmethod=indent
@@ -169,7 +169,7 @@ noremap k gk
 set linebreak
 
 " Line breaks at column 80 for *.todo files
-autocmd bufreadpre *.todo setlocal textwidth=80
+" autocmd bufreadpre *.todo setlocal textwidth=80
 
 " vim-slime
 let g:slime_target = "vimterminal"
@@ -197,10 +197,6 @@ set noshowmode  " get rid of --INSERT-- below status line
 " Replace selection with register
 let @r = '"xd"0P'
 
-" Temporary workaround for entering vim in replace mode on Win10/WSL
-" https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
-set t_u7=
-
 " Syntax highlighting in .md files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
@@ -212,20 +208,6 @@ noremap <F5> <ESC>:source ~/.vimrc<CR>
 
 " CTRL+N to enter normal mode in terminal
 tnoremap <c-n> <c-w><s-n>
-
-" Fix cursor shape in Windows Terminal
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[3 q"
-let &t_EI = "\<Esc>[2 q"
-
-" WSL yank support ==================================================
-let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
-if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
-endif
 
 " Play video with mpv ===============================================
 " Play selected audio or video with mpv
@@ -266,3 +248,24 @@ nmap <leader>d :YcmCompleter GoTo<CR>
 
 " Enable text wrapping
 " set textwidth=80
+
+
+" WSL-specific configuration =================================================
+" Temporary workaround for entering vim in replace mode on Win10/WSL
+" https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
+set t_u7=
+
+" Fix cursor shape in Windows Terminal
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[3 q"
+let &t_EI = "\<Esc>[2 q"
+
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
+" End of WSL-specific configuration ==========================================

@@ -24,12 +24,12 @@ Plugin 'mechatroner/rainbow_csv'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'krzysztofarendt/indentpython.vim'
 
 " Optional plugins
 " -----------------------------------------------------------
 " Plugin 'preservim/nerdtree'  " file explorer
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'krzysztofarendt/indentpython.vim' " Not needed anymore?
 " -----------------------------------------------------------
 
 " All of your Plugins must be added before the following line
@@ -175,7 +175,7 @@ noremap k gk
 set linebreak
 
 " Line breaks at column 80 for *.todo files
-autocmd bufreadpre *.todo setlocal textwidth=80
+" autocmd bufreadpre *.todo setlocal textwidth=80
 
 " netrw
 let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
