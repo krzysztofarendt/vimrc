@@ -1,6 +1,8 @@
 -- Last update: 2023.11.11
 -- Author: Krzysztof Arendt
 --
+-- This file should be located in ~/.config/nvim/init.lua
+--
 -- Notes:
 --      1)  nvim-tree requires a font with glyphs.
 --          I suggest using "FiraCode Nerd Font" which
@@ -8,8 +10,7 @@
 --      2)  coq.nvim requires pyright:
 --          https://microsoft.github.io/pyright/#/installation
 --
--- Package manager: Lazy
--------------------------------------------------------------------------------
+-- Package manager: Lazy ------------------------------------------------------
 -- Based on: https://github.com/folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
