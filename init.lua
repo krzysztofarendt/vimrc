@@ -1,8 +1,6 @@
 -- Last update: 2023.11.11
 -- Author: Krzysztof Arendt
 --
--- This file should be located in ~/.config/nvim/init.lua
---
 -- Notes:
 --      1)  nvim-tree requires a font with glyphs.
 --          I suggest using "FiraCode Nerd Font" which
@@ -10,7 +8,8 @@
 --      2)  coq.nvim requires pyright:
 --          https://microsoft.github.io/pyright/#/installation
 --
--- Package manager: Lazy ------------------------------------------------------
+-- Package manager: Lazy
+-------------------------------------------------------------------------------
 -- Based on: https://github.com/folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -37,6 +36,7 @@ require("lazy").setup({
     {"nvim-tree/nvim-web-devicons"},
     {"nvim-tree/nvim-tree.lua"},
     {"tpope/vim-fugitive"},
+    {"dhruvasagar/vim-table-mode"},
     {"rose-pine/neovim", name = "rose-pine"}
 })
 
@@ -107,7 +107,7 @@ vim.keymap.set('t', '<F5>', [[<esc>:ToggleTerm<CR>]], {})
 vim.keymap.set('v', '<F5>', [[<esc>:ToggleTerm<CR>]], {})
 vim.keymap.set('t', '<F5>', [[<C-\><C-n>:ToggleTerm<CR>]], {})
 vim.keymap.set('i', '<F5>', [[<esc>:ToggleTerm<CR>]], {})
-vim.keymap.set('n', '<leader>t', [[<esc>:ToggleTerm ]], {})
+vim.keymap.set('n', '<F6>', [[<esc>:ToggleTerm ]], {})
 
 -- Telescope keymaps ----------------------------------------------------------
 local builtin = require('telescope.builtin')
@@ -137,7 +137,7 @@ vim.cmd('set expandtab')
 
 -- General keymaps ------------------------------------------------------------
 vim.cmd('set number')
-vim.keymap.set('n', '<F6>', ':set number!<CR>', {noremap = true})
+vim.keymap.set('n', '<F5>', ':set number!<CR>', {noremap = true})
 
 -- Color scheme ---------------------------------------------------------------
 vim.cmd('colorscheme rose-pine')
