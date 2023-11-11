@@ -102,11 +102,11 @@ function _G.set_terminal_keymaps()
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-vim.keymap.set('n', '<F5>', [[:ToggleTerm<CR>]], {})
-vim.keymap.set('t', '<F5>', [[<esc>:ToggleTerm<CR>]], {})
-vim.keymap.set('v', '<F5>', [[<esc>:ToggleTerm<CR>]], {})
-vim.keymap.set('t', '<F5>', [[<C-\><C-n>:ToggleTerm<CR>]], {})
-vim.keymap.set('i', '<F5>', [[<esc>:ToggleTerm<CR>]], {})
+vim.keymap.set('n', '<F7>', [[:ToggleTerm<CR>]], {})
+vim.keymap.set('t', '<F7>', [[<esc>:ToggleTerm<CR>]], {})
+vim.keymap.set('v', '<F7>', [[<esc>:ToggleTerm<CR>]], {})
+vim.keymap.set('t', '<F7>', [[<C-\><C-n>:ToggleTerm<CR>]], {})
+vim.keymap.set('i', '<F7>', [[<esc>:ToggleTerm<CR>]], {})
 vim.keymap.set('n', '<F6>', [[<esc>:ToggleTerm ]], {})
 
 -- Telescope keymaps ----------------------------------------------------------
