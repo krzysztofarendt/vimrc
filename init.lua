@@ -37,7 +37,8 @@ require("lazy").setup({
     {"nvim-tree/nvim-tree.lua"},
     {"tpope/vim-fugitive"},
     {"dhruvasagar/vim-table-mode"},
-    {"rose-pine/neovim", name = "rose-pine"}
+    {"rose-pine/neovim", name = "rose-pine"},
+    {"RRethy/vim-illuminate"},
 })
 
 -- LSP config -----------------------------------------------------------------
