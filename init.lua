@@ -1,4 +1,4 @@
--- Last update: 2023.11.11
+-- Last update: 2023.11.12
 -- Author: Krzysztof Arendt
 --
 -- Notes:
@@ -136,9 +136,12 @@ vim.cmd('set tabstop=4')
 vim.cmd('set shiftwidth=4')
 vim.cmd('set expandtab')
 
+-- Color scheme ---------------------------------------------------------------
+vim.cmd('colorscheme rose-pine')
+
 -- General keymaps ------------------------------------------------------------
 vim.cmd('set number')
 vim.keymap.set('n', '<F5>', ':set number!<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>p', [[:echo expand('%:p')<CR>]], {noremap = true}) -- show absolute path of current file
+vim.cmd([[let @r = '"xd"0P']]) -- replace selection with register
 
--- Color scheme ---------------------------------------------------------------
-vim.cmd('colorscheme rose-pine')
