@@ -144,4 +144,4 @@ vim.cmd('set number')
 vim.keymap.set('n', '<F5>', ':set number!<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>p', [[:echo expand('%:p')<CR>]], {noremap = true}) -- show absolute path of current file
 vim.cmd([[let @r = '"xd"0P']]) -- replace selection with register
-
+vim.keymap.set("n", "<leader>dt", [[:r! date "+\%Y-\%m-\%d \%H:\%M:\%S" <CR>]], {noremap = true})
