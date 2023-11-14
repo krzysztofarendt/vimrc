@@ -1,4 +1,23 @@
+# My Neovim environment
+
+Last update 14.11.2023
+
+1. Install `ripgrep`: `sudo apt install ripgrep`
+2. Install `fd`: `sudo apt install fd-find`
+3. Install (pyright)[https://microsoft.github.io/pyright/#/installation]
+4. Install `FiraCode Nerd Font` from (here)[https://www.nerdfonts.com/font-downloads]
+5. Copy `init.lua` to `~/.config/nvim/init.lua`
+6. Open `nvim`
+7. Wait until all plugins are installed
+8. Run inside Neovim:
+    - `:TSInstall lua`     # Lua
+    - `:TSInstall python`  # Python
+    - `:TSInstall c`       # C
+    - `:TSInstall foam`    # OpenFOAM
+
 # My VIM environment
+
+Last update: 14.11.2023
 
 ## Installation instructions
 
@@ -41,7 +60,7 @@ install_windows.bat
 
 See `Makefile` and `Dockerfile`.
 
-## Set up git (Linux / WSL)
+# Default editor for git (Linux / WSL)
 ```
 git config --global core.editor "vim"
 git config --global merge.tool vimdiff
@@ -49,7 +68,7 @@ git config --global merge.conflictstyle diff3
 git config --global mergetool.prompt false
 ```
 
-## Set up tmux (Linux / WSL)
+# tmux (Linux / WSL)
 ```
 cp _tmux.conf ~/.tmux.conf
 ```

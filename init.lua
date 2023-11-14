@@ -1,12 +1,18 @@
 -- Last update: 2023.11.12
 -- Author: Krzysztof Arendt
 --
--- Notes:
---      1)  nvim-tree requires a font with glyphs.
---          I suggest using "FiraCode Nerd Font" which
---          can be downloaded from: https://www.nerdfonts.com/font-downloads
---      2)  coq.nvim requires pyright:
---          https://microsoft.github.io/pyright/#/installation
+-- 1. Install `ripgrep`: `sudo apt install ripgrep`
+-- 2. Install `fd`: `sudo apt install fd-find`
+-- 3. Install (pyright)[https://microsoft.github.io/pyright/#/installation]
+-- 4. Install `FiraCode Nerd Font` from (here)[https://www.nerdfonts.com/font-downloads]
+-- 5. Copy `init.lua` to `~/.config/nvim/init.lua`
+-- 6. Open `nvim`
+-- 7. Wait until all plugins are installed
+-- 8. Run inside Neovim:
+--     - `:TSInstall lua`     # Lua
+--     - `:TSInstall python`  # Python
+--     - `:TSInstall c`       # C
+--     - `:TSInstall foam`    # OpenFOAM
 --
 -- Package manager: Lazy
 -------------------------------------------------------------------------------
@@ -29,6 +35,7 @@ require("lazy").setup({
     {"neovim/nvim-lspconfig"},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {"nvim-lua/plenary.nvim"},
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
     {"nvim-telescope/telescope.nvim", branch="0.1.x"},
     {"airblade/vim-gitgutter"},
     {'akinsho/toggleterm.nvim', version = "*", config = true},
@@ -110,7 +117,24 @@ vim.keymap.set('t', '<F7>', [[<C-\><C-n>:ToggleTerm<CR>]], {})
 vim.keymap.set('i', '<F7>', [[<esc>:ToggleTerm<CR>]], {})
 vim.keymap.set('n', '<F6>', [[<esc>:ToggleTerm ]], {})
 
--- Telescope keymaps ----------------------------------------------------------
+-- Telescope settings ---------------------------------------------------------
+-- You dont need to set any of these options. These are the default ones. Only
+-- the loading is important
+require('telescope').setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "ignore_case",       -- "smart_case" | "ignore_case" | "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
+  }
+}
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require('telescope').load_extension('fzf')
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
@@ -145,3 +169,6 @@ vim.keymap.set('n', '<F5>', ':set number!<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>p', [[:echo expand('%:p')<CR>]], {noremap = true}) -- show absolute path of current file
 vim.cmd([[let @r = '"xd"0P']]) -- replace selection with register
 vim.keymap.set("n", "<leader>dt", [[:r! date "+\%Y-\%m-\%d \%H:\%M:\%S" <CR>]], {noremap = true})
+
+-- Other ----------------------------------------------------------------------
+vim.opt.completeopt = { "menu" }
