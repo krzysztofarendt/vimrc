@@ -46,6 +46,7 @@ require("lazy").setup({
     {"dhruvasagar/vim-table-mode"},
     {"rose-pine/neovim", name = "rose-pine"},
     {"RRethy/vim-illuminate"},
+    {"mechatroner/rainbow_csv"},
 })
 
 -- LSP config -----------------------------------------------------------------
