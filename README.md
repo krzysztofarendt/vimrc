@@ -4,8 +4,8 @@ Last update 14.11.2023
 
 1. Install `ripgrep`: `sudo apt install ripgrep`
 2. Install `fd`: `sudo apt install fd-find`
-3. Install (pyright)[https://microsoft.github.io/pyright/#/installation]
-4. Install `FiraCode Nerd Font` from (here)[https://www.nerdfonts.com/font-downloads]
+3. Install [pyright](https://microsoft.github.io/pyright/#/installation)
+4. Install `FiraCode Nerd Font` from [here](https://www.nerdfonts.com/font-downloads)
 5. Copy `init.lua` to `~/.config/nvim/init.lua`
 6. Open `nvim`
 7. Wait until all plugins are installed
