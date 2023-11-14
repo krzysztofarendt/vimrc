@@ -2,6 +2,8 @@
 
 Last update 14.11.2023
 
+![image](https://github.com/krzysztofarendt/vimrc/assets/16005748/a8d4e861-63aa-4fc0-a1ec-06d7484fcff6)
+
 1. Install `ripgrep`: `sudo apt install ripgrep`
 2. Install `fd`: `sudo apt install fd-find`
 3. Install [pyright](https://microsoft.github.io/pyright/#/installation)
