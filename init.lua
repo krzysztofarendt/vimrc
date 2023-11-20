@@ -47,7 +47,15 @@ require("lazy").setup({
     {"rose-pine/neovim", name = "rose-pine"},
     {"RRethy/vim-illuminate"},
     {"mechatroner/rainbow_csv"},
+    {"phaazon/hop.nvim"},
 })
+
+-- hop config -----------------------------------------------------------------
+require'hop'.setup()
+
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
+vim.keymap.set('n', '<leader>hh',  ":HopWord<CR>", {noremap = true})
 
 -- LSP config -----------------------------------------------------------------
 -- Setup language servers.
