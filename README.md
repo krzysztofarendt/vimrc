@@ -17,6 +17,31 @@ Last update 14.11.2023
     - `:TSInstall c`       # C
     - `:TSInstall foam`    # OpenFOAM
 
+## Neovim keybindings
+
+| Keymap    | Type    | Function                                                   |
+|-----------|---------|------------------------------------------------------------|
+| <F9>      | General | Zen mode                                                   |
+| <F8>      | General | Toggle file explorer                                       |
+| <F7>      | General | Toggle terminal                                            |
+| <F6>...   | General | Toggle new terminal with ID ... (use a number here)        |
+| <F5>      | General | Toggle line numbers                                        |
+| \hh       | General | Hop word                                                   |
+| \ff       | General | Find file                                                  |
+| \ff       | General | Search open buffers                                        |
+| \fs       | General | Use over a string, it will find all files with this string |
+| \fg       | General | Grep through files (try with <c-f> inside search window)   |
+| \p        | General | Show current file absolute path                            |
+| @r        | General | Macro for visual replacement from buffer                   |
+| \dt       | General | Insert current date and time                               |
+| <space>e  | Python  | Show diagnostic window (Python errors from pyright)        |
+| gd        | Python  | Go to definition                                           |
+| gD        | Python  | Go to declaration                                          |
+| <C-k>     | Python  | Signature help                                             |
+| <space>rn | Python  | Rename                                                     |
+| K         | Python  | Hover help                                                 |
+
+
 # My VIM environment
 
 Last update: 14.11.2023
