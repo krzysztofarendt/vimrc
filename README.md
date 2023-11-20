@@ -14,8 +14,6 @@ Last update 14.11.2023
 8. Run inside Neovim:
     - `:TSInstall lua`     # Lua
     - `:TSInstall python`  # Python
-    - `:TSInstall c`       # C
-    - `:TSInstall foam`    # OpenFOAM
 
 ## Neovim keybindings
 
