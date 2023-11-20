@@ -48,6 +48,7 @@ require("lazy").setup({
     {"RRethy/vim-illuminate"},
     {"mechatroner/rainbow_csv"},
     {"phaazon/hop.nvim"},
+    {"pocco81/true-zen.nvim"},
 })
 
 -- hop config -----------------------------------------------------------------
@@ -56,6 +57,9 @@ require'hop'.setup()
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
 vim.keymap.set('n', '<leader>hh',  ":HopWord<CR>", {noremap = true})
+
+-- true-zen config ------------------------------------------------------------
+vim.keymap.set('n', '<F9>', ":TZAtaraxis<CR>", {noremap = true})
 
 -- LSP config -----------------------------------------------------------------
 -- Setup language servers.
