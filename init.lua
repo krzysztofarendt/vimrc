@@ -49,6 +49,7 @@ require("lazy").setup({
     {"mechatroner/rainbow_csv"},
     {"phaazon/hop.nvim"},
     {"pocco81/true-zen.nvim"},
+    {"Vimjas/vim-python-pep8-indent"},
 })
 
 -- hop config -----------------------------------------------------------------
