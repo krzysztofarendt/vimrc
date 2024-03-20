@@ -40,8 +40,8 @@ require("lazy").setup({
     {"airblade/vim-gitgutter"},
     {'akinsho/toggleterm.nvim', version = "*", config = true},
     {"nvim-lualine/lualine.nvim"},
-    {"nvim-tree/nvim-web-devicons"},
-    {"nvim-tree/nvim-tree.lua"},
+    -- {"nvim-tree/nvim-web-devicons"},
+    -- {"nvim-tree/nvim-tree.lua"},
     {"tpope/vim-fugitive"},
     {"dhruvasagar/vim-table-mode"},
     {"rose-pine/neovim", name = "rose-pine"},
@@ -50,6 +50,7 @@ require("lazy").setup({
     {"phaazon/hop.nvim"},
     {"pocco81/true-zen.nvim"},
     {"Vimjas/vim-python-pep8-indent"},
+    {"stevearc/oil.nvim"},
 })
 
 -- hop config -----------------------------------------------------------------
@@ -108,11 +109,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- nvim-tree setup ------------------------------------------------------------
 -- https://www.nerdfonts.com/font-downloads
 -- Suggested: FiraCode Nerd Font
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.opt.termguicolors = true
-require("nvim-tree").setup()
-vim.keymap.set('n', '<F8>', ':NvimTreeToggle<CR>', {noremap = true})
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
+-- vim.opt.termguicolors = true
+-- require("nvim-tree").setup()
+-- vim.keymap.set('n', '<F8>', ':NvimTreeToggle<CR>', {noremap = true})
+
+-- oil setup ------------------------------------------------------------------
+require("oil").setup()
 
 -- toggleterm setup -----------------------------------------------------------
 require("toggleterm").setup{}
