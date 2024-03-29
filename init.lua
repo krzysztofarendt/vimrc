@@ -117,6 +117,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- oil setup ------------------------------------------------------------------
 require("oil").setup()
+vim.keymap.set('n', '<F8>', ':Oil<CR>', {noremap = true})
 
 -- toggleterm setup -----------------------------------------------------------
 require("toggleterm").setup{}
