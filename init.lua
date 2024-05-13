@@ -172,7 +172,7 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
 -- Setup lualine --------------------------------------------------------------
 require('lualine').setup({options = {
-    theme = 'ayu_dark',
+    theme = 'ayu_mirage',
     icons_enabled = false,
     section_separators = { left = "", right = "" },
     component_separators = { left = "/", right = "/" },
