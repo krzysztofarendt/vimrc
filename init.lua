@@ -44,13 +44,14 @@ require("lazy").setup({
     -- {"nvim-tree/nvim-tree.lua"},
     {"tpope/vim-fugitive"},
     {"dhruvasagar/vim-table-mode"},
-    {"rose-pine/neovim", name = "rose-pine"},
     {"RRethy/vim-illuminate"},
     {"mechatroner/rainbow_csv"},
     {"phaazon/hop.nvim"},
-    {"pocco81/true-zen.nvim"},
     {"Vimjas/vim-python-pep8-indent"},
     {"stevearc/oil.nvim"},
+    -- Color shemes
+    {"rose-pine/neovim", name = "rose-pine"},
+    {"catppuccin/nvim", name = "catppuccin", priority = 1000}
 })
 
 -- hop config -----------------------------------------------------------------
@@ -59,9 +60,6 @@ require'hop'.setup()
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
 vim.keymap.set('n', '<leader>hh',  ":HopWord<CR>", {noremap = true})
-
--- true-zen config ------------------------------------------------------------
-vim.keymap.set('n', '<F9>', ":TZAtaraxis<CR>", {noremap = true})
 
 -- LSP config -----------------------------------------------------------------
 -- Setup language servers.
@@ -192,7 +190,10 @@ vim.cmd('set shiftwidth=4')
 vim.cmd('set expandtab')
 
 -- Color scheme ---------------------------------------------------------------
-vim.cmd('colorscheme rose-pine')
+-- vim.cmd('colorscheme rose-pine')
+vim.cmd('colorscheme rose-pine-dawn')
+-- vim.cmd("colorscheme catppuccin")
+-- vim.cmd("colorscheme catppuccin-latte")
 
 -- General keymaps ------------------------------------------------------------
 vim.cmd('set number')
