@@ -191,9 +191,9 @@ vim.cmd('set expandtab')
 
 -- Color scheme ---------------------------------------------------------------
 -- vim.cmd('colorscheme rose-pine')
-vim.cmd('colorscheme rose-pine-dawn')
+-- vim.cmd('colorscheme rose-pine-dawn')
 -- vim.cmd("colorscheme catppuccin")
--- vim.cmd("colorscheme catppuccin-latte")
+vim.cmd("colorscheme catppuccin-latte")
 
 -- General keymaps ------------------------------------------------------------
 vim.cmd('set number')
