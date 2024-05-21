@@ -118,7 +118,9 @@ require("oil").setup()
 vim.keymap.set('n', '<F8>', ':Oil<CR>', {noremap = true})
 
 -- toggleterm setup -----------------------------------------------------------
-require("toggleterm").setup{}
+require("toggleterm").setup{
+    direction="float"
+}
 
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
