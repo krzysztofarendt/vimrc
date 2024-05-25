@@ -1,18 +1,22 @@
--- Last update: 2023.11.12
+-- Last update: 2024-05-25
 -- Author: Krzysztof Arendt
 --
 -- 1. Install `ripgrep`: `sudo apt install ripgrep`
 -- 2. Install `fd`: `sudo apt install fd-find`
 -- 3. Install (pyright)[https://microsoft.github.io/pyright/#/installation]
--- 4. Install `FiraCode Nerd Font` from (here)[https://www.nerdfonts.com/font-downloads]
--- 5. Copy `init.lua` to `~/.config/nvim/init.lua`
--- 6. Open `nvim`
--- 7. Wait until all plugins are installed
--- 8. Run inside Neovim:
---     - `:TSInstall lua`     # Lua
---     - `:TSInstall python`  # Python
---     - `:TSInstall c`       # C
---     - `:TSInstall foam`    # OpenFOAM
+-- 4. Install (lua-language-server)[https://luals.github.io/wiki/build/] and add it to $PATH
+-- 5. Install `FiraCode Nerd Font` from (here)[https://www.nerdfonts.com/font-downloads]
+-- 6. Copy `init.lua` to `~/.config/nvim/init.lua`
+-- 7. Open `nvim`
+-- 8. Wait until all plugins are installed
+-- 9. Run inside Neovim:
+--     - `:TSInstall lua`
+--     - `:TSInstall python`
+--     - `:TSInstall c`
+--     - `:TSInstall markdown`
+--
+--  TODO:
+--      - https://github.com/hrsh7th/nvim-cmp
 --
 -- Package manager: Lazy
 -------------------------------------------------------------------------------
@@ -44,14 +48,14 @@ require("lazy").setup({
     -- {"nvim-tree/nvim-tree.lua"},
     {"tpope/vim-fugitive"},
     {"dhruvasagar/vim-table-mode"},
-    {"RRethy/vim-illuminate"},
+    -- {"RRethy/vim-illuminate"},
     {"mechatroner/rainbow_csv"},
     {"phaazon/hop.nvim"},
     {"Vimjas/vim-python-pep8-indent"},
     {"stevearc/oil.nvim"},
     -- Color shemes
     {"rose-pine/neovim", name = "rose-pine"},
-    {"catppuccin/nvim", name = "catppuccin", priority = 1000}
+    {"catppuccin/nvim", name = "catppuccin", priority = 1000},
 })
 
 -- hop config -----------------------------------------------------------------
@@ -65,6 +69,7 @@ vim.keymap.set('n', '<leader>hh',  ":HopWord<CR>", {noremap = true})
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
+lspconfig.lua_ls.setup {}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -124,8 +129,8 @@ require("toggleterm").setup{
 
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
-  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
+  vim.keymap.set('t', '<esc><esc>', [[<C-\><C-n>]], opts)
+  -- vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
@@ -186,16 +191,10 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
--- Tab -> 4 spaces
+-- Tab -> 4 spaces ------------------------------------------------------------
 vim.cmd('set tabstop=4')
 vim.cmd('set shiftwidth=4')
 vim.cmd('set expandtab')
-
--- Color scheme ---------------------------------------------------------------
--- vim.cmd('colorscheme rose-pine')
--- vim.cmd('colorscheme rose-pine-dawn')
--- vim.cmd("colorscheme catppuccin")
-vim.cmd("colorscheme catppuccin-latte")
 
 -- General keymaps ------------------------------------------------------------
 vim.cmd('set number')
@@ -206,3 +205,10 @@ vim.keymap.set("n", "<leader>dt", [[:r! date "+\%Y-\%m-\%d \%H:\%M:\%S" <CR>]], 
 
 -- Other ----------------------------------------------------------------------
 vim.opt.completeopt = { "menu" }
+
+-- Color scheme ---------------------------------------------------------------
+-- vim.cmd('colorscheme rose-pine')
+-- vim.cmd('colorscheme rose-pine-dawn')
+-- vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme catppuccin-latte")
+
