@@ -124,7 +124,10 @@ vim.keymap.set('n', '<F8>', ':Oil<CR>', {noremap = true})
 
 -- toggleterm setup -----------------------------------------------------------
 require("toggleterm").setup{
-    direction="float"
+    direction="float",
+    float_opts = {
+        border = "curved",
+    },
 }
 
 function _G.set_terminal_keymaps()
