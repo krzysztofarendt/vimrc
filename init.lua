@@ -1,4 +1,6 @@
--- Last update: 2024-05-25
+vim.print("NeoVim config by Krzysztof Arendt")
+
+-- Last update: 2024-05-28
 -- Author: Krzysztof Arendt
 --
 -- 1. Install `ripgrep`: `sudo apt install ripgrep`
@@ -39,7 +41,9 @@ require("lazy").setup({
     {"neovim/nvim-lspconfig"},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {"nvim-lua/plenary.nvim"},
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+    {'nvim-telescope/telescope-fzf-native.nvim',
+     build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+    },
     {"nvim-telescope/telescope.nvim", branch="0.1.x"},
     {"airblade/vim-gitgutter"},
     {'akinsho/toggleterm.nvim', version = "*", config = true},
@@ -48,7 +52,7 @@ require("lazy").setup({
     -- {"nvim-tree/nvim-tree.lua"},
     {"tpope/vim-fugitive"},
     {"dhruvasagar/vim-table-mode"},
-    -- {"RRethy/vim-illuminate"},
+    {"RRethy/vim-illuminate"},
     {"mechatroner/rainbow_csv"},
     {"phaazon/hop.nvim"},
     {"Vimjas/vim-python-pep8-indent"},
@@ -121,6 +125,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- oil setup ------------------------------------------------------------------
 require("oil").setup()
 vim.keymap.set('n', '<F8>', ':Oil<CR>', {noremap = true})
+
+-- illuminate setup -----------------------------------------------------------
+require('illuminate').configure({
+    under_cursor = false,
+})
 
 -- toggleterm setup -----------------------------------------------------------
 require("toggleterm").setup{
@@ -212,6 +221,6 @@ vim.opt.completeopt = { "menu" }
 -- Color scheme ---------------------------------------------------------------
 -- vim.cmd('colorscheme rose-pine')
 -- vim.cmd('colorscheme rose-pine-dawn')
--- vim.cmd("colorscheme catppuccin")
-vim.cmd("colorscheme catppuccin-latte")
+vim.cmd("colorscheme catppuccin")
+-- vim.cmd("colorscheme catppuccin-latte")
 
