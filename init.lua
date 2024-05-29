@@ -1,6 +1,5 @@
 vim.print("NeoVim config by Krzysztof Arendt")
-
--- Last update: 2024-05-28
+-- Last update: 2024-05-29
 -- Author: Krzysztof Arendt
 --
 -- 1. Install `ripgrep`: `sudo apt install ripgrep`
@@ -17,12 +16,8 @@ vim.print("NeoVim config by Krzysztof Arendt")
 --     - `:TSInstall c`
 --     - `:TSInstall markdown`
 --
---  TODO:
---      - https://github.com/hrsh7th/nvim-cmp
---
 -- Package manager: Lazy
 -------------------------------------------------------------------------------
--- Based on: https://github.com/folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -38,42 +33,65 @@ vim.opt.rtp:prepend(lazypath)
 
 -- List of packages -----------------------------------------------------------
 require("lazy").setup({
-    {"neovim/nvim-lspconfig"},
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    -- Lua functions (dependency for many packages)
     {"nvim-lua/plenary.nvim"},
+    -- Better code highlighting
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    {"RRethy/vim-illuminate"},
+    {"mechatroner/rainbow_csv"},
+    -- LSP, autocompletion, auto-indentation
+    {"Vimjas/vim-python-pep8-indent"},
+    {"neovim/nvim-lspconfig"},
+    {'hrsh7th/nvim-cmp'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {"ray-x/lsp_signature.nvim",
+      event = "VeryLazy",
+      opts = {},
+      config = function(_, opts) require'lsp_signature'.setup(opts) end
+    },
+    -- Fuzzy finder
     {'nvim-telescope/telescope-fzf-native.nvim',
      build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
     },
     {"nvim-telescope/telescope.nvim", branch="0.1.x"},
+    -- Git integration
     {"airblade/vim-gitgutter"},
+    -- Terminal
     {'akinsho/toggleterm.nvim', version = "*", config = true},
-    {"nvim-lualine/lualine.nvim"},
-    -- {"nvim-tree/nvim-web-devicons"},
-    -- {"nvim-tree/nvim-tree.lua"},
     {"tpope/vim-fugitive"},
-    {"dhruvasagar/vim-table-mode"},
-    {"RRethy/vim-illuminate"},
-    {"mechatroner/rainbow_csv"},
+    -- Status line
+    {"nvim-lualine/lualine.nvim"},
+    -- Navigation
     {"phaazon/hop.nvim"},
-    {"Vimjas/vim-python-pep8-indent"},
+    -- File explorer
     {"stevearc/oil.nvim"},
+    -- {"nvim-tree/nvim-tree.lua"},
     -- Color shemes
     {"rose-pine/neovim", name = "rose-pine"},
     {"catppuccin/nvim", name = "catppuccin", priority = 1000},
+    -- Table formatting
+    {"dhruvasagar/vim-table-mode"},
+    -- Icons
+    -- {"nvim-tree/nvim-web-devicons"},
 })
 
--- hop config -----------------------------------------------------------------
-require'hop'.setup()
-
-local hop = require('hop')
-local directions = require('hop.hint').HintDirection
-vim.keymap.set('n', '<leader>hh',  ":HopWord<CR>", {noremap = true})
-
 -- LSP config -----------------------------------------------------------------
--- Setup language servers.
+-- Setup autocomplete from nvim-cmp
+require('cmp').setup {
+    sources = {
+        {name = 'nvim_lsp'},
+    },
+}
+-- Function signature hints
+local cfg = {}  -- add your config here
+require "lsp_signature".setup(cfg)
+
+-- Setup language servers
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
-lspconfig.lua_ls.setup {}
+lspconfig.clangd.setup{capabilities = capabilities}
+lspconfig.pyright.setup{capabilities = capabilities}
+lspconfig.lua_ls.setup{capabilities = capabilities}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -112,6 +130,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+-- hop config -----------------------------------------------------------------
+require'hop'.setup()
+
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
+vim.keymap.set('n', '<leader>hh',  ":HopWord<CR>", {noremap = true})
 
 -- nvim-tree setup ------------------------------------------------------------
 -- https://www.nerdfonts.com/font-downloads
@@ -219,8 +244,7 @@ vim.keymap.set("n", "<leader>dt", [[:r! date "+\%Y-\%m-\%d \%H:\%M:\%S" <CR>]], 
 vim.opt.completeopt = { "menu" }
 
 -- Color scheme ---------------------------------------------------------------
--- vim.cmd('colorscheme rose-pine')
+vim.cmd('colorscheme rose-pine')
 -- vim.cmd('colorscheme rose-pine-dawn')
-vim.cmd("colorscheme catppuccin")
+-- vim.cmd("colorscheme catppuccin")
 -- vim.cmd("colorscheme catppuccin-latte")
-

@@ -1,25 +1,23 @@
 # My Neovim environment
 
-Last update 14.11.2023
-
-![image](https://github.com/krzysztofarendt/vimrc/assets/16005748/a8d4e861-63aa-4fc0-a1ec-06d7484fcff6)
-
 1. Install `ripgrep`: `sudo apt install ripgrep`
 2. Install `fd`: `sudo apt install fd-find`
-3. Install [pyright](https://microsoft.github.io/pyright/#/installation)
-4. Install `FiraCode Nerd Font` from [here](https://www.nerdfonts.com/font-downloads)
-5. Copy `init.lua` to `~/.config/nvim/init.lua`
-6. Open `nvim`
-7. Wait until all plugins are installed
-8. Run inside Neovim:
-    - `:TSInstall lua`     # Lua
-    - `:TSInstall python`  # Python
+3. Install (pyright)[https://microsoft.github.io/pyright/#/installation]
+4. Install (lua-language-server)[https://luals.github.io/wiki/build/] and add it to $PATH
+5. Install `FiraCode Nerd Font` from (here)[https://www.nerdfonts.com/font-downloads]
+6. Copy `init.lua` to `~/.config/nvim/init.lua`
+7. Open `nvim`
+8. Wait until all plugins are installed
+9. Run inside Neovim:
+    - `:TSInstall lua`
+    - `:TSInstall python`
+    - `:TSInstall c`
+    - `:TSInstall markdown`
 
 ## Neovim keybindings
 
 | Keymap       | Type    | Function                                                   |
 |--------------|---------|------------------------------------------------------------|
-| `<F9>`       | General | Zen mode                                                   |
 | `<F8>`       | General | Toggle file explorer                                       |
 | `<F7>`       | General | Toggle terminal                                            |
 | `<F6>...`    | General | Toggle new terminal with ID ... (use a number here)        |
