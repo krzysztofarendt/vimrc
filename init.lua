@@ -65,7 +65,7 @@ require("lazy").setup({
     {"phaazon/hop.nvim"},
     -- File explorer
     {"stevearc/oil.nvim"},
-    -- {"nvim-tree/nvim-tree.lua"},
+    {"nvim-tree/nvim-tree.lua"},
     -- Color shemes
     {"rose-pine/neovim", name = "rose-pine"},
     {"catppuccin/nvim", name = "catppuccin", priority = 1000},
@@ -143,9 +143,9 @@ vim.keymap.set('n', '<leader>hh',  ":HopWord<CR>", {noremap = true})
 -- Suggested: FiraCode Nerd Font
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
--- vim.opt.termguicolors = true
--- require("nvim-tree").setup()
--- vim.keymap.set('n', '<F8>', ':NvimTreeToggle<CR>', {noremap = true})
+vim.opt.termguicolors = true
+require("nvim-tree").setup()
+vim.keymap.set('n', '<F9>', ':NvimTreeToggle<CR>', {noremap = true})
 
 -- oil setup ------------------------------------------------------------------
 require("oil").setup()
