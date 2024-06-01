@@ -256,8 +256,32 @@ vim.g.clipboard = {
   },
 }
 
+-- Show only file names in the tab line ---------------------------------------
+vim.o.tabline = "%!v:lua.tabline()"
+
+function _G.tabline()
+    local s = ""
+    for i = 1, vim.fn.tabpagenr('$') do
+        -- Get the window number of the first window in the tab page
+        local winnr = vim.fn.tabpagewinnr(i, '$')
+        -- Get the buffer number associated with the window
+        local bufnr = vim.fn.tabpagebuflist(i)[winnr]
+        -- Get the filename associated with the buffer number
+        local filename = vim.fn.bufname(bufnr)
+        -- Extract the file name from the full path
+        filename = vim.fn.fnamemodify(filename, ':t')
+        -- Highlight the current tab
+        local hl = i == vim.fn.tabpagenr() and '%#TabLineSel#' or '%#TabLine#'
+        -- Add the tab label to the tabline string
+        s = s .. string.format('%s %d: %s ', hl, i, filename)
+    end
+    return s
+end
+
 -- Color scheme ---------------------------------------------------------------
 vim.cmd('colorscheme rose-pine')
 -- vim.cmd('colorscheme rose-pine-dawn')
 -- vim.cmd("colorscheme catppuccin")
 -- vim.cmd("colorscheme catppuccin-latte")
+
+
