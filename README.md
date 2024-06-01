@@ -1,14 +1,19 @@
-# My Neovim environment
+# My NeoVim environment
 
-1. Install `ripgrep`: `sudo apt install ripgrep`
-2. Install `fd`: `sudo apt install fd-find`
-3. Install (pyright)[https://microsoft.github.io/pyright/#/installation]
-4. Install (lua-language-server)[https://luals.github.io/wiki/build/] and add it to $PATH
-5. Install `FiraCode Nerd Font` from (here)[https://www.nerdfonts.com/font-downloads]
-6. Copy `init.lua` to `~/.config/nvim/init.lua`
-7. Open `nvim`
-8. Wait until all plugins are installed
-9. Run inside Neovim:
+I use mostly NeoVim instead of Vim, so my configuration file `init.lua` should be up-to-date.
+
+## Installation instructions
+
+1. Install the newest NeoVim (>=0.10): https://neovim.io/
+2. Install `ripgrep`: `sudo apt install ripgrep`
+3. Install `fd`: `sudo apt install fd-find`
+4. Install (pyright)[https://microsoft.github.io/pyright/#/installation]
+5. Install (lua-language-server)[https://luals.github.io/wiki/build/] and add it to $PATH
+6. Install `FiraCode Nerd Font` from (here)[https://www.nerdfonts.com/font-downloads]
+7. Copy `init.lua` to `~/.config/nvim/init.lua`
+8. Open `nvim`
+9. Wait until all plugins are installed
+10. Run inside Neovim:
     - `:TSInstall lua`
     - `:TSInstall python`
     - `:TSInstall c`
@@ -18,7 +23,8 @@
 
 | Keymap       | Type    | Function                                                   |
 |--------------|---------|------------------------------------------------------------|
-| `<F8>`       | General | Toggle file explorer                                       |
+| `<F9>`       | General | Toggle file explorer (nvim-tree)                                 |
+| `<F8>`       | General | Toggle file explorer (Oil)                                 |
 | `<F7>`       | General | Toggle terminal                                            |
 | `<F6>...`    | General | Toggle new terminal with ID ... (use a number here)        |
 | `<F5>`       | General | Toggle line numbers                                        |
@@ -40,7 +46,7 @@
 
 # My VIM environment
 
-Last update: 14.11.2023
+I switched from Vim to NeoVim, but still keep a copy my `.vimrc`. Last update: 14.11.2023.
 
 ## Installation instructions
 

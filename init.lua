@@ -1,21 +1,5 @@
 vim.print("NeoVim config by Krzysztof Arendt")
--- Last update: 2024-05-29
--- Author: Krzysztof Arendt
---
--- 1. Install `ripgrep`: `sudo apt install ripgrep`
--- 2. Install `fd`: `sudo apt install fd-find`
--- 3. Install (pyright)[https://microsoft.github.io/pyright/#/installation]
--- 4. Install (lua-language-server)[https://luals.github.io/wiki/build/] and add it to $PATH
--- 5. Install `FiraCode Nerd Font` from (here)[https://www.nerdfonts.com/font-downloads]
--- 6. Copy `init.lua` to `~/.config/nvim/init.lua`
--- 7. Open `nvim`
--- 8. Wait until all plugins are installed
--- 9. Run inside Neovim:
---     - `:TSInstall lua`
---     - `:TSInstall python`
---     - `:TSInstall c`
---     - `:TSInstall markdown`
---
+
 -- Package manager: Lazy
 -------------------------------------------------------------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -283,5 +267,3 @@ vim.cmd('colorscheme rose-pine')
 -- vim.cmd('colorscheme rose-pine-dawn')
 -- vim.cmd("colorscheme catppuccin")
 -- vim.cmd("colorscheme catppuccin-latte")
-
-
