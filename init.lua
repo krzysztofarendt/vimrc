@@ -56,7 +56,9 @@ require("lazy").setup({
     -- Table formatting
     {"dhruvasagar/vim-table-mode"},
     -- Icons
-    -- {"nvim-tree/nvim-web-devicons"},
+    {"nvim-tree/nvim-web-devicons"},
+    -- Codeium
+    {"Exafunction/codeium.vim", event = 'BufEnter' },
 })
 
 -- LSP config -----------------------------------------------------------------
