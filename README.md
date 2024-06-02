@@ -1,6 +1,6 @@
 # My NeoVim environment
 
-I use mostly NeoVim instead of Vim, so my configuration file `init.lua` should be up-to-date.
+Nowadays, I use mostly NeoVim instead of Vim, so `init.lua` is more up-to-date than `.vimrc`.
 
 ## Installation instructions
 
@@ -13,11 +13,13 @@ I use mostly NeoVim instead of Vim, so my configuration file `init.lua` should b
 7. Copy `init.lua` to `~/.config/nvim/init.lua`
 8. Open `nvim`
 9. Wait until all plugins are installed
-10. Run inside Neovim:
+10. Run in NeoVim:
     - `:TSInstall lua`
     - `:TSInstall python`
     - `:TSInstall c`
     - `:TSInstall markdown`
+11. Make account on codeium: https://codeium.com/
+12. Run in NeoVim: `:Codeium Auth`
 
 ## Neovim keybindings
 
