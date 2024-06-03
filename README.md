@@ -18,8 +18,9 @@ Nowadays, I use mostly NeoVim instead of Vim, so `init.lua` is more up-to-date t
     - `:TSInstall python`
     - `:TSInstall c`
     - `:TSInstall markdown`
-11. Make account on codeium: https://codeium.com/
-12. Run in NeoVim: `:Codeium Auth`
+11. (Optional) Make account on codeium: https://codeium.com/
+12. (Optional) Uncomment the codeium plugin in the Lazy setup section
+13. (Optional) Run in NeoVim: `:Codeium Auth`
 
 ## Neovim keybindings
 

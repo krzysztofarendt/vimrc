@@ -33,6 +33,9 @@ require("lazy").setup({
       opts = {},
       config = function(_, opts) require'lsp_signature'.setup(opts) end
     },
+    -- Folding
+    {'kevinhwang91/promise-async'},
+    {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'},
     -- Fuzzy finder
     {'nvim-telescope/telescope-fzf-native.nvim',
      build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
@@ -57,7 +60,7 @@ require("lazy").setup({
     {"dhruvasagar/vim-table-mode"},
     -- Icons
     {"nvim-tree/nvim-web-devicons"},
-    -- Codeium
+    -- Codeium (optional - uncomment if you wish to use it)
     {"Exafunction/codeium.vim", event = 'BufEnter' },
 })
 
@@ -116,6 +119,25 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+-- nvim-ufo -------------------------------------------------------------------
+vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+
+local language_servers = require("lspconfig").util.available_servers() -- list servers manually like {'pyright', 'clangd'}
+for _, ls in ipairs(language_servers) do
+    require('lspconfig')[ls].setup({
+        capabilities = capabilities
+        -- you can add other fields for setting up lsp server in this table
+    })
+end
+require('ufo').setup()
 
 -- hop config -----------------------------------------------------------------
 require'hop'.setup()
