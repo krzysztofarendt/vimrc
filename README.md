@@ -22,11 +22,11 @@ Nowadays, I use mostly NeoVim instead of Vim, so `init.lua` is more up-to-date t
 12. (Optional) Uncomment the codeium plugin in the Lazy setup section
 13. (Optional) Run in NeoVim: `:Codeium Auth`
 
-## Neovim keybindings
+## Custom key bindings
 
 | Keymap       | Type    | Function                                                   |
 |--------------|---------|------------------------------------------------------------|
-| `<F9>`       | General | Toggle file explorer (nvim-tree)                                 |
+| `<F9>`       | General | Toggle file explorer (nvim-tree)                           |
 | `<F8>`       | General | Toggle file explorer (Oil)                                 |
 | `<F7>`       | General | Toggle terminal                                            |
 | `<F6>...`    | General | Toggle new terminal with ID ... (use a number here)        |
@@ -46,6 +46,11 @@ Nowadays, I use mostly NeoVim instead of Vim, so `init.lua` is more up-to-date t
 | `<space>rn`  | Python  | Rename                                                     |
 | `K`          | Python  | Hover help                                                 |
 | `<c-x><c-o>` | Python  | Trigger autocomplete via omnifunc                          |
+| `zM`         | General | Fold all                                                   |
+| `zc`         | General | Close fold under the cursor                                |
+| `zo`         | General | Open fold under the cursor                                 |
+| `za`         | General | Toggle fold under the cursor                               |
+| `\tm`        | General | Toggle table mode (vim-table-mode plugin)                  |
 
 # My VIM environment
 
