@@ -61,7 +61,7 @@ require("lazy").setup({
     -- Icons
     {"nvim-tree/nvim-web-devicons"},
     -- Codeium (optional - uncomment if you wish to use it)
-    {"Exafunction/codeium.vim", event = 'BufEnter' },
+    -- {"Exafunction/codeium.vim", event = 'BufEnter' },
 })
 
 -- LSP config -----------------------------------------------------------------
