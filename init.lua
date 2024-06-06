@@ -56,12 +56,13 @@ require("lazy").setup({
     -- Color shemes
     {"rose-pine/neovim", name = "rose-pine"},
     {"catppuccin/nvim", name = "catppuccin", priority = 1000},
+    {"chriskempson/base16-vim"},
     -- Table formatting
     {"dhruvasagar/vim-table-mode"},
     -- Icons
     {"nvim-tree/nvim-web-devicons"},
-    -- Codeium (optional - uncomment if you wish to use it)
-    -- {"Exafunction/codeium.vim", event = 'BufEnter' },
+    -- Codeium
+    {"Exafunction/codeium.vim", event = 'BufEnter' },
 })
 
 -- LSP config -----------------------------------------------------------------
@@ -250,6 +251,8 @@ vim.keymap.set("n", "<leader>dt", [[:r! date "+\%Y-\%m-\%d \%H:\%M:\%S" <CR>]], 
 
 -- Other ----------------------------------------------------------------------
 vim.opt.completeopt = { "menu" }
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = false
 
 -- clipboard-osc52 ------------------------------------------------------------
 vim.g.clipboard = {
@@ -287,7 +290,8 @@ function _G.tabline()
 end
 
 -- Color scheme ---------------------------------------------------------------
-vim.cmd('colorscheme rose-pine')
+-- vim.cmd('colorscheme rose-pine')
 -- vim.cmd('colorscheme rose-pine-dawn')
 -- vim.cmd("colorscheme catppuccin")
 -- vim.cmd("colorscheme catppuccin-latte")
+vim.cmd("colorscheme base16-tomorrow-night")
