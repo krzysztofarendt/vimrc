@@ -57,13 +57,15 @@ require("lazy").setup({
     {"rose-pine/neovim", name = "rose-pine"},
     {"catppuccin/nvim", name = "catppuccin", priority = 1000},
     {"chriskempson/base16-vim"},
+    {"sainnhe/everforest"},
+    {"folke/tokyonight.nvim"},
     -- Transparent background
     {"xiyaowong/transparent.nvim"},
     -- Table formatting
     {"dhruvasagar/vim-table-mode"},
     -- Icons
     {"nvim-tree/nvim-web-devicons"},
-    -- Codeium (optional)
+    -- Codeium
     -- {"Exafunction/codeium.vim", event = 'BufEnter' },
 })
 
@@ -292,8 +294,10 @@ function _G.tabline()
 end
 
 -- Color scheme ---------------------------------------------------------------
--- vim.cmd('colorscheme rose-pine')
--- vim.cmd('colorscheme rose-pine-dawn')
--- vim.cmd("colorscheme catppuccin")
--- vim.cmd("colorscheme catppuccin-latte")
-vim.cmd("colorscheme base16-tomorrow-night")
+-- vim.cmd.colorscheme('rose-pine')
+-- vim.cmd.colorscheme('rose-pine-dawn')
+-- vim.cmd.colorscheme('catppuccin')
+-- vim.cmd.colorscheme('catppuccin-latte')
+-- vim.cmd.colorscheme('tokyonight')
+-- vim.cmd.colorscheme('everforest')
+vim.cmd.colorscheme('base16-tomorrow-night')
