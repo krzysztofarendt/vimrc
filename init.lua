@@ -57,12 +57,14 @@ require("lazy").setup({
     {"rose-pine/neovim", name = "rose-pine"},
     {"catppuccin/nvim", name = "catppuccin", priority = 1000},
     {"chriskempson/base16-vim"},
+    -- Transparent background
+    {"xiyaowong/transparent.nvim"},
     -- Table formatting
     {"dhruvasagar/vim-table-mode"},
     -- Icons
     {"nvim-tree/nvim-web-devicons"},
-    -- Codeium
-    {"Exafunction/codeium.vim", event = 'BufEnter' },
+    -- Codeium (optional)
+    -- {"Exafunction/codeium.vim", event = 'BufEnter' },
 })
 
 -- LSP config -----------------------------------------------------------------
@@ -247,6 +249,7 @@ vim.cmd('set number')
 vim.keymap.set('n', '<F5>', ':set number!<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>p', [[:echo expand('%:p')<CR>]], {noremap = true}) -- show absolute path of current file
 vim.keymap.set("n", "<leader>dt", [[:r! date "+\%Y-\%m-\%d \%H:\%M:\%S" <CR>]], {noremap = true})
+vim.keymap.set("n", "<F4>", [[:TransparentToggle<CR>]], {noremap = true})
 
 -- Other ----------------------------------------------------------------------
 vim.opt.completeopt = { "menu" }

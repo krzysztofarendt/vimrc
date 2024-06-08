@@ -31,6 +31,7 @@ Nowadays, I use mostly NeoVim instead of Vim, so `init.lua` is more up-to-date t
 | `<F7>`       | General | Toggle terminal                                            |
 | `<F6>...`    | General | Toggle new terminal with ID ... (use a number here)        |
 | `<F5>`       | General | Toggle line numbers                                        |
+| `<F4>`       | General | Toggle transparent background                              |
 | `\hh`        | General | Hop word                                                   |
 | `\ff`        | General | Find file                                                  |
 | `\ff`        | General | Search open buffers                                        |
