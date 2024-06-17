@@ -67,6 +67,19 @@ require("lazy").setup({
     {"nvim-tree/nvim-web-devicons"},
     -- Codeium
     -- {"Exafunction/codeium.vim", event = 'BufEnter' },
+    -- VimWiki
+    {"vimwiki/vimwiki",
+    init = function()
+        vim.g.vimwiki_list = {
+            {
+            path = '~/journal',
+            syntax = 'default',
+            ext = '.wiki',
+            },
+        }
+    end,
+    },
+    {"mattn/calendar-vim"},
 })
 
 -- LSP config -----------------------------------------------------------------
@@ -299,5 +312,5 @@ end
 -- vim.cmd.colorscheme('catppuccin')
 -- vim.cmd.colorscheme('catppuccin-latte')
 -- vim.cmd.colorscheme('tokyonight')
--- vim.cmd.colorscheme('everforest')
-vim.cmd.colorscheme('base16-tomorrow-night')
+vim.cmd.colorscheme('everforest')
+-- vim.cmd.colorscheme('base16-tomorrow-night')
