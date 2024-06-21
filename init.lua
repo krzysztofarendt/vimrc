@@ -1,5 +1,3 @@
-vim.print("NeoVim config by Krzysztof Arendt")
-
 -- Package manager: Lazy
 -------------------------------------------------------------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -242,7 +240,11 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
 -- Setup lualine --------------------------------------------------------------
 require('lualine').setup({options = {
-    theme = 'everforest',
+    theme = 'dracula',
+    -- theme = 'powerline',
+    -- theme = 'material',
+    -- theme = 'wombat',
+    -- theme = 'everforest',
     icons_enabled = false,
     section_separators = { left = "", right = "" },
     component_separators = { left = "/", right = "/" },
@@ -311,6 +313,6 @@ end
 -- vim.cmd.colorscheme('rose-pine-dawn')
 -- vim.cmd.colorscheme('catppuccin')
 -- vim.cmd.colorscheme('catppuccin-latte')
--- vim.cmd.colorscheme('tokyonight')
-vim.cmd.colorscheme('everforest')
+vim.cmd.colorscheme('tokyonight')
+-- vim.cmd.colorscheme('everforest')
 -- vim.cmd.colorscheme('base16-tomorrow-night')
