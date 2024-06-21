@@ -182,10 +182,12 @@ require('illuminate').configure({
 
 -- toggleterm setup -----------------------------------------------------------
 require("toggleterm").setup{
-    direction="float",
-    float_opts = {
-        border = "curved",
-    },
+    -- direction="float",
+    direction="horizontal",
+    size = 20,
+    -- float_opts = {
+    --     border = "curved",
+    -- },
 }
 
 function _G.set_terminal_keymaps()
