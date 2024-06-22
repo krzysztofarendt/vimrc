@@ -57,6 +57,7 @@ require("lazy").setup({
     {"chriskempson/base16-vim"},
     {"sainnhe/everforest"},
     {"folke/tokyonight.nvim"},
+    {"Mofiqul/dracula.nvim"},
     -- Transparent background
     {"xiyaowong/transparent.nvim"},
     -- Table formatting
@@ -315,6 +316,8 @@ end
 -- vim.cmd.colorscheme('rose-pine-dawn')
 -- vim.cmd.colorscheme('catppuccin')
 -- vim.cmd.colorscheme('catppuccin-latte')
-vim.cmd.colorscheme('tokyonight')
+-- vim.cmd.colorscheme('tokyonight')
+vim.cmd.colorscheme('dracula')
+-- vim.cmd.colorscheme('dracula-soft')
 -- vim.cmd.colorscheme('everforest')
 -- vim.cmd.colorscheme('base16-tomorrow-night')
