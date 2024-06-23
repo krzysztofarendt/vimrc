@@ -1,26 +1,30 @@
 # My NeoVim environment
 
-Nowadays, I use mostly NeoVim instead of Vim, so `init.lua` is more up-to-date than `.vimrc`.
+I use mostly NeoVim instead of Vim [nowadays](nowadays), so `init.lua` is more up-to-date than `.vimrc`.
 
 ## Installation instructions
 
-1. Install the newest NeoVim (>=0.10): https://neovim.io/
-2. Install `ripgrep`: `sudo apt install ripgrep`
-3. Install `fd`: `sudo apt install fd-find`
-4. Install (pyright)[https://microsoft.github.io/pyright/#/installation]
-5. Install (lua-language-server)[https://luals.github.io/wiki/build/] and add it to $PATH
-6. Install `FiraCode Nerd Font` from (here)[https://www.nerdfonts.com/font-downloads]
-7. Copy `init.lua` to `~/.config/nvim/init.lua`
-8. Open `nvim`
-9. Wait until all plugins are installed
-10. Run in NeoVim:
+- Install the newest NeoVim (>=0.10): https://neovim.io/
+- Install `cmake`: `sudo apt install cmake`
+- Install `ripgrep`: `sudo apt install ripgrep`
+- Install `fd`: `sudo apt install fd-find`
+- Install `nvm`: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
+- Update Node.js: `nvm install 20`
+- Install [pyright][https://microsoft.github.io/pyright/#/installation]
+- Install `FiraCode Nerd Font` from [here](https://www.nerdfonts.com/font-downloads)
+- Copy `init.lua` to `~/.config/nvim/init.lua`
+- Open `nvim`
+- Wait until all plugins are installed
+- Run in NeoVim:
     - `:TSInstall lua`
     - `:TSInstall python`
     - `:TSInstall c`
     - `:TSInstall markdown`
-11. (Optional) Make account on codeium: https://codeium.com/
-12. (Optional) Uncomment the codeium plugin in the Lazy setup section
-13. (Optional) Run in NeoVim: `:Codeium Auth`
+- (Optional) Make account on codeium: https://codeium.com/
+- (Optional) Uncomment the codeium plugin in the Lazy setup section
+- (Optional) Run in NeoVim: `:Codeium Auth`
+- (Optional) Install [lua-language-server][https://luals.github.io/wiki/build/] and add it to $PATH
+- (Optional) Uncomment `lspconfig.lua_ls.setup{capabilities = capabilities}`
 
 ## Custom key bindings
 
