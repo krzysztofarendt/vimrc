@@ -273,7 +273,7 @@ vim.keymap.set("n", "<F4>", [[:TransparentToggle<CR>]], {noremap = true})
 
 -- Other ----------------------------------------------------------------------
 vim.opt.completeopt = { "menu" }
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.cursorcolumn = false
 
 -- clipboard-osc52 ------------------------------------------------------------
