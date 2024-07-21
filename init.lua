@@ -97,7 +97,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 lspconfig.clangd.setup{capabilities = capabilities}
 lspconfig.pyright.setup{capabilities = capabilities}
-lspconfig.lua_ls.setup{capabilities = capabilities}
+-- lspconfig.lua_ls.setup{capabilities = capabilities}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -273,7 +273,7 @@ vim.keymap.set("n", "<F4>", [[:TransparentToggle<CR>]], {noremap = true})
 
 -- Other ----------------------------------------------------------------------
 vim.opt.completeopt = { "menu" }
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.cursorcolumn = false
 
 -- clipboard-osc52 ------------------------------------------------------------
