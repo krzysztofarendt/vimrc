@@ -10,7 +10,8 @@ I use mostly NeoVim instead of Vim [nowadays](nowadays), so `init.lua` is more u
 - Install `fd`: `sudo apt install fd-find`
 - Install `nvm`: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
 - Update Node.js: `nvm install 20`
-- Install [pyright][https://microsoft.github.io/pyright/#/installation]
+- Install [pyright](https://microsoft.github.io/pyright/#/installation)
+- Install [clangd](https://clangd.llvm.org/)
 - Install `FiraCode Nerd Font` from [here](https://www.nerdfonts.com/font-downloads)
 - Copy `init.lua` to `~/.config/nvim/init.lua`
 - Open `nvim`
@@ -23,7 +24,7 @@ I use mostly NeoVim instead of Vim [nowadays](nowadays), so `init.lua` is more u
 - (Optional) Make account on codeium: https://codeium.com/
 - (Optional) Uncomment the codeium plugin in the Lazy setup section
 - (Optional) Run in NeoVim: `:Codeium Auth`
-- (Optional) Install [lua-language-server][https://luals.github.io/wiki/build/] and add it to $PATH
+- (Optional) Install [lua-language-server](https://luals.github.io/wiki/build/) and add it to $PATH
 - (Optional) Uncomment `lspconfig.lua_ls.setup{capabilities = capabilities}`
 
 ## Custom key bindings

@@ -307,6 +307,9 @@ function _G.tabline()
     return s
 end
 
+-- Table mode -----------------------------------------------------------------
+vim.g.table_mode_syntax = 0  -- fixes slow Table Mode for large tables
+
 -- Color scheme ---------------------------------------------------------------
 -- vim.cmd.colorscheme('rose-pine')
 -- vim.cmd.colorscheme('rose-pine-dawn')
