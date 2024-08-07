@@ -66,20 +66,16 @@ require("lazy").setup({
     {"nvim-tree/nvim-web-devicons"},
     -- Codeium
     -- {"Exafunction/codeium.vim", event = 'BufEnter' },
-    -- VimWiki
-    {"vimwiki/vimwiki",
-    init = function()
-        vim.g.vimwiki_list = {
-            {
-            path = '~/journal',
-            syntax = 'default',
-            ext = '.wiki',
-            },
-        }
-    end,
-    },
-    {"mattn/calendar-vim"},
+    -- Markdown
+    {
+    'MeanderingProgrammer/render-markdown.nvim',
+    opts = {},
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    }
 })
+
 
 -- LSP config -----------------------------------------------------------------
 -- Setup autocomplete from nvim-cmp
