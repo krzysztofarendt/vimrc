@@ -101,6 +101,7 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', '<F3>', [[:LspRestart<CR>:echo 'LSP restarted!'<CR>]], {noremap = true})
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -328,8 +329,8 @@ vim.g.table_mode_syntax = 0  -- fixes slow Table Mode for large tables
 -- vim.cmd.colorscheme('rose-pine-dawn')
 -- vim.cmd.colorscheme('catppuccin')
 -- vim.cmd.colorscheme('catppuccin-latte')
--- vim.cmd.colorscheme('tokyonight')
-vim.cmd.colorscheme('dracula')
+vim.cmd.colorscheme('tokyonight')
+-- vim.cmd.colorscheme('dracula')
 -- vim.cmd.colorscheme('dracula-soft')
 -- vim.cmd.colorscheme('everforest')
 -- vim.cmd.colorscheme('base16-tomorrow-night')
