@@ -41,9 +41,9 @@ require("lazy").setup({
     {"nvim-telescope/telescope.nvim", branch="0.1.x"},
     -- Git integration
     {"airblade/vim-gitgutter"},
+    {"tpope/vim-fugitive"},
     -- Terminal
     {'akinsho/toggleterm.nvim', version = "*", config = true},
-    {"tpope/vim-fugitive"},
     -- Status line
     {"nvim-lualine/lualine.nvim"},
     -- Navigation
@@ -58,8 +58,6 @@ require("lazy").setup({
     {"sainnhe/everforest"},
     {"folke/tokyonight.nvim"},
     {"Mofiqul/dracula.nvim"},
-    -- Transparent background
-    {"xiyaowong/transparent.nvim"},
     -- Table formatting
     {"dhruvasagar/vim-table-mode"},
     -- Icons
@@ -279,7 +277,6 @@ vim.cmd('set number')
 vim.keymap.set('n', '<F5>', ':set number!<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>p', [[:echo expand('%:p')<CR>]], {noremap = true}) -- show absolute path of current file
 vim.keymap.set("n", "<leader>dt", [[:r! date "+\%Y-\%m-\%d \%H:\%M:\%S" <CR>]], {noremap = true})
-vim.keymap.set("n", "<F4>", [[:TransparentToggle<CR>]], {noremap = true})
 
 -- Other ----------------------------------------------------------------------
 vim.opt.completeopt = { "menu" }
