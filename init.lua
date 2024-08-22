@@ -40,7 +40,8 @@ require("lazy").setup({
     },
     {"nvim-telescope/telescope.nvim", branch="0.1.x"},
     -- Git integration
-    {"airblade/vim-gitgutter"},
+    -- {"airblade/vim-gitgutter"},
+    {"lewis6991/gitsigns.nvim"},
     {"tpope/vim-fugitive"},
     -- Terminal
     {'akinsho/toggleterm.nvim', version = "*", config = true},
@@ -192,8 +193,15 @@ require('illuminate').configure({
 -- toggleterm setup -----------------------------------------------------------
 require("toggleterm").setup{
     -- direction="float",
-    direction="horizontal",
-    size = 20,
+    -- direction="horizontal",
+    direction="vertical",
+    size = function(term)
+        if term.direction == "horizontal" then
+          return 15
+        elseif term.direction == "vertical" then
+          return vim.o.columns * 0.4
+        end
+    end,
     -- float_opts = {
     --     border = "curved",
     -- },
@@ -261,6 +269,9 @@ require('lualine').setup({options = {
     component_separators = { left = "/", right = "/" },
 }})
 
+-- Setup gitsigns -------------------------------------------------------------
+require('gitsigns').setup()
+
 -- Remove all trailing whitespace upon saving ---------------------------------
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" },
@@ -326,8 +337,8 @@ vim.g.table_mode_syntax = 0  -- fixes slow Table Mode for large tables
 -- vim.cmd.colorscheme('rose-pine-dawn')
 -- vim.cmd.colorscheme('catppuccin')
 -- vim.cmd.colorscheme('catppuccin-latte')
-vim.cmd.colorscheme('tokyonight')
+-- vim.cmd.colorscheme('tokyonight')
 -- vim.cmd.colorscheme('dracula')
 -- vim.cmd.colorscheme('dracula-soft')
--- vim.cmd.colorscheme('everforest')
+vim.cmd.colorscheme('everforest')
 -- vim.cmd.colorscheme('base16-tomorrow-night')
