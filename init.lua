@@ -59,6 +59,12 @@ require("lazy").setup({
     {"sainnhe/everforest"},
     {"folke/tokyonight.nvim"},
     {"Mofiqul/dracula.nvim"},
+    {"shaunsingh/nord.nvim"},
+    {"navarasu/onedark.nvim"},
+    {"rockyzhang24/arctic.nvim",
+      branch = "v2",
+      dependencies = { "rktjmp/lush.nvim" }
+    },
     -- Table formatting
     {"dhruvasagar/vim-table-mode"},
     -- Icons
@@ -340,5 +346,8 @@ vim.g.table_mode_syntax = 0  -- fixes slow Table Mode for large tables
 -- vim.cmd.colorscheme('tokyonight')
 -- vim.cmd.colorscheme('dracula')
 -- vim.cmd.colorscheme('dracula-soft')
-vim.cmd.colorscheme('everforest')
+-- vim.cmd.colorscheme('everforest')
 -- vim.cmd.colorscheme('base16-tomorrow-night')
+vim.cmd.colorscheme('arctic')
+-- vim.cmd.colorscheme('nord')
+-- vim.cmd.colorscheme('onedark')
