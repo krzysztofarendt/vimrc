@@ -69,8 +69,6 @@ require("lazy").setup({
     {"dhruvasagar/vim-table-mode"},
     -- Icons
     {"nvim-tree/nvim-web-devicons"},
-    -- Codeium
-    -- {"Exafunction/codeium.vim", event = 'BufEnter' },
     -- Markdown
     {
     'MeanderingProgrammer/render-markdown.nvim',
@@ -78,9 +76,54 @@ require("lazy").setup({
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    },
+    -- Avante AI
+    {
+      "yetone/avante.nvim",
+      event = "VeryLazy",
+      lazy = false,
+      version = false, -- set this if you want to always pull the latest change
+      opts = {
+        -- add any opts here
+      },
+      -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+      build = "make",
+      -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+      dependencies = {
+        "stevearc/dressing.nvim",
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+        --- The below dependencies are optional,
+        "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+        "zbirenbaum/copilot.lua", -- for providers='copilot'
+        {
+          -- support for image pasting
+          "HakonHarnes/img-clip.nvim",
+          event = "VeryLazy",
+          opts = {
+            -- recommended settings
+            default = {
+              embed_image_as_base64 = false,
+              prompt_for_file_name = false,
+              drag_and_drop = {
+                insert_mode = true,
+              },
+              -- required for Windows users
+              use_absolute_path = true,
+            },
+          },
+        },
+        {
+          -- Make sure to set this up properly if you have lazy=true
+          'MeanderingProgrammer/render-markdown.nvim',
+          opts = {
+            file_types = { "markdown", "Avante" },
+          },
+          ft = { "markdown", "Avante" },
+        },
+      },
     }
 })
-
 
 -- LSP config -----------------------------------------------------------------
 -- Setup autocomplete from nvim-cmp
@@ -348,6 +391,7 @@ vim.g.table_mode_syntax = 0  -- fixes slow Table Mode for large tables
 -- vim.cmd.colorscheme('dracula-soft')
 -- vim.cmd.colorscheme('everforest')
 -- vim.cmd.colorscheme('base16-tomorrow-night')
-vim.cmd.colorscheme('arctic')
+-- vim.cmd.colorscheme('arctic')
 -- vim.cmd.colorscheme('nord')
--- vim.cmd.colorscheme('onedark')
+vim.cmd.colorscheme('onedark')
+

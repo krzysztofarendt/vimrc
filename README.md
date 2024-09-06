@@ -21,9 +21,6 @@ I use mostly NeoVim instead of Vim [nowadays](nowadays), so `init.lua` is more u
     - `:TSInstall python`
     - `:TSInstall c`
     - `:TSInstall markdown`
-- (Optional) Make account on codeium: https://codeium.com/
-- (Optional) Uncomment the codeium plugin in the Lazy setup section
-- (Optional) Run in NeoVim: `:Codeium Auth`
 - (Optional) Install [lua-language-server](https://luals.github.io/wiki/build/) and add it to $PATH
 - (Optional) Uncomment `lspconfig.lua_ls.setup{capabilities = capabilities}`
 
