@@ -23,6 +23,7 @@ I use mostly NeoVim instead of Vim [nowadays](nowadays), so `init.lua` is more u
     - `:TSInstall markdown`
 - (Optional) Install [lua-language-server](https://luals.github.io/wiki/build/) and add it to $PATH
 - (Optional) Uncomment `lspconfig.lua_ls.setup{capabilities = capabilities}`
+- (Optional) Add to your `.bashrc`: `export ANTHROPIC_API_KEY=your-api-key`
 
 ## Custom key bindings
 
