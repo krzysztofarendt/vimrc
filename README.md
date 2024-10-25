@@ -55,9 +55,6 @@ I use mostly NeoVim instead of Vim [nowadays](nowadays), so `init.lua` is more u
 | `zo`         | General | Open fold under the cursor                                 |
 | `za`         | General | Toggle fold under the cursor                               |
 | `\tm`        | General | Toggle table mode (vim-table-mode plugin)                  |
-| `\cal`       | General | Open calendar                                              |
-| `\ww`        | General | Go to wiki index                                           |
-| `\w\w`       | General | Open today's note                                          |
 
 
 # My VIM environment
