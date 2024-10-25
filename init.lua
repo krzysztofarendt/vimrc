@@ -61,6 +61,7 @@ require("lazy").setup({
     {"Mofiqul/dracula.nvim"},
     {"shaunsingh/nord.nvim"},
     {"navarasu/onedark.nvim"},
+    {"ribru17/bamboo.nvim"},
     {"rockyzhang24/arctic.nvim",
       branch = "v2",
       dependencies = { "rktjmp/lush.nvim" }
@@ -146,7 +147,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 lspconfig.clangd.setup{capabilities = capabilities}
 lspconfig.pyright.setup{capabilities = capabilities}
--- lspconfig.lua_ls.setup{capabilities = capabilities}
+lspconfig.lua_ls.setup{capabilities = capabilities}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -248,7 +249,7 @@ require('illuminate').configure({
 require("toggleterm").setup{
     -- direction="float",
     -- direction="horizontal",
-    direction="vertical",
+    direction="horizontal",
     size = function(term)
         if term.direction == "horizontal" then
           return 15
@@ -399,5 +400,5 @@ vim.g.table_mode_syntax = 0  -- fixes slow Table Mode for large tables
 -- vim.cmd.colorscheme('base16-tomorrow-night')
 -- vim.cmd.colorscheme('arctic')
 -- vim.cmd.colorscheme('nord')
-vim.cmd.colorscheme('onedark')
-
+-- vim.cmd.colorscheme('onedark')
+vim.cmd.colorscheme('bamboo')
