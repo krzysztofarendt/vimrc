@@ -69,6 +69,19 @@ require("lazy").setup({
     {"dhruvasagar/vim-table-mode"},
     -- Icons
     {"nvim-tree/nvim-web-devicons"},
+    -- Markdown
+    {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {
+        pipe_table = { enabled = false },
+        code = { enabled = false },
+    },
+    },
     -- Avante AI
     {
       "yetone/avante.nvim",
@@ -329,6 +342,7 @@ vim.cmd('set number')
 vim.keymap.set('n', '<F5>', ':set number!<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>p', [[:echo expand('%:p')<CR>]], {noremap = true}) -- show absolute path of current file
 vim.keymap.set("n", "<leader>dt", [[:r! date "+\%Y-\%m-\%d \%H:\%M:\%S" <CR>]], {noremap = true})
+vim.keymap.set('x', '<leader>r', '"xd"0P', {noremap = true})
 
 -- Other ----------------------------------------------------------------------
 vim.opt.completeopt = { "menu" }

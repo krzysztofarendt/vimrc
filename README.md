@@ -41,7 +41,7 @@ I use mostly NeoVim instead of Vim [nowadays](nowadays), so `init.lua` is more u
 | `\fs`        | General | Use over a string, it will find all files with this string |
 | `\fg`        | General | Grep through files (try with <c-f> inside search window)   |
 | `\p`         | General | Show current file absolute path                            |
-| `@r`         | General | Macro for visual replacement from buffer                   |
+| `\r`         | General | Macro for visual replacement from buffer                   |
 | `\dt`        | General | Insert current date and time                               |
 | `<space>e`   | Python  | Show diagnostic window (Python errors from pyright)        |
 | `gd`         | Python  | Go to definition                                           |
