@@ -21,6 +21,12 @@ require("lazy").setup({
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {"RRethy/vim-illuminate"},
     {"mechatroner/rainbow_csv"},
+    {"lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        ---@module "ibl"
+        ---@type ibl.config
+        opts = {},
+    },
     -- LSP, autocompletion, auto-indentation
     {"Vimjas/vim-python-pep8-indent"},
     {"neovim/nvim-lspconfig"},
