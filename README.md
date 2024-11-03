@@ -25,6 +25,24 @@ I use mostly NeoVim instead of Vim [nowadays](nowadays), so `init.lua` is more u
 - (Optional) Uncomment `lspconfig.lua_ls.setup{capabilities = capabilities}`
 - (Optional) Add to your `.bashrc`: `export ANTHROPIC_API_KEY=your-api-key`
 
+## Git config
+
+Add the following lines to `~/.gitconfig`:
+```
+[core]
+	editor = nvim
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[merge]
+    tool = nvimdiff
+[mertetool]
+    prompt = true
+[mergetool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+```
+
 ## Custom key bindings
 
 | Keymap       | Type    | Function                                                   |
