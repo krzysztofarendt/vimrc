@@ -76,19 +76,6 @@ require("lazy").setup({
     {"dhruvasagar/vim-table-mode"},
     -- Icons
     {"nvim-tree/nvim-web-devicons"},
-    -- Markdown
-    {
-    'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {
-        pipe_table = { enabled = false },
-        code = { enabled = false },
-    },
-    },
     -- Avante AI
     {
       "yetone/avante.nvim",
@@ -124,14 +111,6 @@ require("lazy").setup({
               use_absolute_path = true,
             },
           },
-        },
-        {
-          -- Make sure to set this up properly if you have lazy=true
-          'MeanderingProgrammer/render-markdown.nvim',
-          opts = {
-            file_types = { "markdown", "Avante" },
-          },
-          ft = { "markdown", "Avante" },
         },
       },
     }
