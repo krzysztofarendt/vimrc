@@ -260,6 +260,7 @@ vim.keymap.set('v', '<F7>', [[<esc>:ToggleTerm<CR>]], {})
 vim.keymap.set('t', '<F7>', [[<C-\><C-n>:ToggleTerm<CR>]], {})
 vim.keymap.set('i', '<F7>', [[<esc>:ToggleTerm<CR>]], {})
 vim.keymap.set('n', '<F6>', [[<esc>:ToggleTerm ]], {})
+vim.cmd('autocmd TermOpen * setlocal nonumber norelativenumber')  -- turn off line numbers
 
 -- Telescope settings ---------------------------------------------------------
 -- You dont need to set any of these options. These are the default ones. Only
