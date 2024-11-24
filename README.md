@@ -1,6 +1,6 @@
 # My NeoVim environment
 
-I use mostly NeoVim instead of Vim [nowadays](nowadays), so `init.lua` is more up-to-date than `.vimrc`.
+I use mostly NeoVim instead of Vim nowadays, so `init.lua` is more up-to-date than `.vimrc`.
 
 ## Installation instructions
 
