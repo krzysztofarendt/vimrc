@@ -196,7 +196,7 @@ vim.o.foldenable = true
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
-local language_servers = require("lspconfig").util._available_servers() -- list servers manually like {'pyright', 'clangd'}
+local language_servers = require("lspconfig").util.available_servers() -- list servers manually like {'pyright', 'clangd'}
 for _, ls in ipairs(language_servers) do
     require('lspconfig')[ls].setup({
         capabilities = capabilities
