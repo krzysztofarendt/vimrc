@@ -14,23 +14,44 @@ sudo apt update
 sudo apt install helix
 ```
 
-## Configuration
-
+## Configure helix
 - Install `pipx`
 - Install `pyright`: `pipx install pyright`
 - Copy `languages.toml` and `config.toml` to `~/.config/helix/`
-- Run Helix: `hx`
+- Set helix your default editor: `hx ~/.bashrc`, add `export EDITOR=hx`
 
 ## Other tools
-
-tmux:
+`tmux`:
 - copy `_tmux.conf` to `~/.tmux.conf`
 
-lazygit:
-- https://github.com/jesseduffield/lazygit
-
-rg:
+`rg`:
 - https://github.com/BurntSushi/ripgrep
 
-uv:
+`uv`:
 - https://github.com/astral-sh/uv
+
+`nnn`:
+- https://github.com/jarun/nnn
+
+`lazygit`:
+- https://github.com/jesseduffield/lazygit
+
+`delta`:
+- https://github.com/dandavison/delta
+- Add below lines to `~/.gitconfig`:
+```
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+    side-by-side = true
+    line-numbers = true
+
+[merge]
+    conflictstyle = zdiff3  
+```
