@@ -42,6 +42,7 @@ sudo apt install helix
 ```
 [core]
     pager = delta
+    editor = hx
 
 [interactive]
     diffFilter = delta --color-only
