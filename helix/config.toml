@@ -1,1 +1,5 @@
-theme = "monokai_pro"
+theme = "carbonfox"
+
+[keys.normal]
+F1 = ":set whitespace.render none"
+F2 = ":set whitespace.render all"
