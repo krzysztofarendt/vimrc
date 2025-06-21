@@ -23,6 +23,7 @@ sudo apt install helix
 ## Other tools
 `tmux`:
 - copy `_tmux.conf` to `~/.tmux.conf`
+- for WSL, switch the clipboard keymap to `bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "clip.exe"`
 
 `rg`:
 - https://github.com/BurntSushi/ripgrep
