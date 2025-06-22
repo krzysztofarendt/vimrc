@@ -57,3 +57,9 @@ sudo apt install helix
 [merge]
     conflictstyle = zdiff3  
 ```
+
+## Terminal fonts
+
+Link: https://www.nerdfonts.com/font-downloads
+
+Recommended font: `JetBrainsMono Nerd Font`
