@@ -1,5 +1,13 @@
+# theme = "catppuccin_frappe"
+# theme = "everforest_dark"
 theme = "carbonfox"
 
 [keys.normal]
 F1 = ":set whitespace.render none"
 F2 = ":set whitespace.render all"
+
+[editor.smart-tab]
+enable = false
+
+[editor]
+auto-pairs = false
