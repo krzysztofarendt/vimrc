@@ -18,12 +18,19 @@ sudo apt install helix
 - Install `pipx`
 - Install `pyright`: `pipx install pyright`
 - Copy `languages.toml` and `config.toml` to `~/.config/helix/`
-- Set helix your default editor: `hx ~/.bashrc`, add `export EDITOR=hx`
+- Set helix your default editor: `hx ~/.bashrc`:
+```
+export EDITOR=hx
+export VISUAL=hx
+```
 
 ## Other tools
 `tmux`:
 - copy `_tmux.conf` to `~/.tmux.conf`
 - for WSL, switch the clipboard keymap to `bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "clip.exe"`
+
+`zellij`:
+- https://github.com/zellij-org/zellij
 
 `rg`:
 - https://github.com/BurntSushi/ripgrep
