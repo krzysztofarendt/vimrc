@@ -26,11 +26,12 @@ export VISUAL=hx
 
 ## Other tools
 `tmux`:
-- copy `_tmux.conf` to `~/.tmux.conf`
+- copy `tmux/tmux.conf` to `~/.tmux.conf`
 - for WSL, switch the clipboard keymap to `bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "clip.exe"`
 
 `zellij`:
 - https://github.com/zellij-org/zellij
+- copy `zellij/config.kdl` to `~/.config/zellij/`
 
 `rg`:
 - https://github.com/BurntSushi/ripgrep
