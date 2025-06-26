@@ -1,14 +1,4 @@
-# theme = "catppuccin_frappe"
-# theme = "everforest_dark"
-# theme = "kaolin-dark"
-# theme = "bogster"
-# theme = "material_oceanic"
-# theme = "material_darker"
-# theme = "ayu_dark"
-# theme = "dark_high_contrast"
-# theme = "dracula_at_night"
-# theme = "carbonfox"
-theme = "papercolor-light"
+theme = "everforest_dark"
 
 [keys.normal]
 F1 = ":set whitespace.render none"
