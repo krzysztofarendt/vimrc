@@ -7,7 +7,8 @@
 # theme = "ayu_dark"
 # theme = "dark_high_contrast"
 # theme = "dracula_at_night"
-theme = "carbonfox"
+# theme = "carbonfox"
+theme = "bogster_light"
 
 [keys.normal]
 F1 = ":set whitespace.render none"

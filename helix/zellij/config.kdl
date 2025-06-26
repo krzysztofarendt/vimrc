@@ -251,7 +251,8 @@ load_plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "ansi"
+// theme "ansi"
+theme "nord"
  
 // Choose the base input mode of zellij.
 // Default: normal
