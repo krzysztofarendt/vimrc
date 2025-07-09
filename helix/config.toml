@@ -1,4 +1,4 @@
-theme = "everforest_dark"
+theme = "tokyonight_storm"
 
 [keys.normal]
 F1 = ":set whitespace.render none"
@@ -6,9 +6,16 @@ F2 = ":set whitespace.render all"
 X = ["extend_line_up", "extend_to_line_bounds"]
 G = ":sh git status"
 L = ":sh pwd & echo ---- & ls"
+# "A-s" = "signature_help"
+
+# [keys.insert]
+# "A-s" = "signature_help"
 
 [editor.smart-tab]
 enable = false
 
 [editor]
-auto-pairs = false
+auto-pairs = true
+
+# [editor.lsp]
+# auto-signature-help = false
