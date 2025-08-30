@@ -7,3 +7,8 @@ formatter = { command = "black", args = ["--quiet", "-"] }
 command = "pyright-langserver"
 args = ["--stdio"]
 
+[[language]]
+name = "rust"
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"

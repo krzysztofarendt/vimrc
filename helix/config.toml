@@ -1,3 +1,4 @@
+# theme = "onelight"
 theme = "tokyonight_storm"
 
 [keys.normal]
@@ -15,7 +16,8 @@ L = ":sh pwd & echo ---- & ls"
 enable = false
 
 [editor]
-auto-pairs = true
+auto-pairs = false
+auto-format = false
 
 # [editor.lsp]
 # auto-signature-help = false
