@@ -145,19 +145,17 @@ keybinds clear-defaults=true {
         bind "Ctrl down" { MoveFocus "down"; }
         bind "Ctrl up" { MoveFocus "up"; }
         bind "Ctrl right" { MoveFocusOrTab "right"; }
-        bind "Ctrl +" { Resize "Increase"; }
-        bind "Ctrl -" { Resize "Decrease"; }
-        bind "Ctrl =" { Resize "Increase"; }
-        bind "Ctrl [" { PreviousSwapLayout; }
-        bind "Ctrl ]" { NextSwapLayout; }
-        bind "Ctrl f" { ToggleFloatingPanes; }
         bind "Ctrl h" { MoveFocusOrTab "left"; }
-        bind "Ctrl i" { MoveTab "left"; }
         bind "Ctrl j" { MoveFocus "down"; }
         bind "Ctrl k" { MoveFocus "up"; }
         bind "Ctrl l" { MoveFocusOrTab "right"; }
-        bind "Ctrl n" { NewPane; }
-        bind "Ctrl o" { MoveTab "right"; }
+        bind "Alt [" { PreviousSwapLayout; }
+        bind "Alt ]" { NextSwapLayout; }
+        bind "Ctrl Alt g" { ToggleFloatingPanes; }
+        bind "Ctrl Alt f" { ToggleFocusFullscreen; }
+        bind "Ctrl Alt n" { NewPane; }
+        bind "Ctrl Alt s" { EditScrollback; }
+        bind "Ctrl Alt o" { MoveTab "right"; }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl b" { SwitchToMode "locked"; }
@@ -194,10 +192,7 @@ keybinds clear-defaults=true {
         bind "down" { ScrollDown; }
         bind "up" { ScrollUp; }
         bind "right" { PageScrollDown; }
-        bind "Ctrl b" { PageScrollUp; }
-        bind "Ctrl c" { ScrollToBottom; SwitchToMode "locked"; }
         bind "d" { HalfPageScrollDown; }
-        bind "Ctrl f" { PageScrollDown; }
         bind "h" { PageScrollUp; }
         bind "j" { ScrollDown; }
         bind "k" { ScrollUp; }
@@ -205,7 +200,6 @@ keybinds clear-defaults=true {
         bind "u" { HalfPageScrollUp; }
     }
     entersearch {
-        bind "Ctrl c" { SwitchToMode "scroll"; }
         bind "esc" { SwitchToMode "scroll"; }
         bind "enter" { SwitchToMode "search"; }
     }
@@ -213,7 +207,7 @@ keybinds clear-defaults=true {
         bind "esc" { UndoRenameTab; SwitchToMode "tab"; }
     }
     shared_among "renametab" "renamepane" {
-        bind "Ctrl c" { SwitchToMode "locked"; }
+        bind "esc" { SwitchToMode "locked"; }
     }
     renamepane {
         bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
@@ -336,7 +330,7 @@ pane_frames true
 // Examples:
 //
 // copy_command "xclip -selection clipboard" // x11
-// copy_command "wl-copy"                    // wayland
+copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 // 
 // copy_command "pbcopy"
@@ -348,7 +342,7 @@ pane_frames true
 //   - system (default)
 //   - primary
 // 
-// copy_clipboard "primary"
+copy_clipboard "primary"
  
 // Enable automatic copying (and clearing) of selection when releasing mouse
 // Default: true
