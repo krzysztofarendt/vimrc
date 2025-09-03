@@ -1,5 +1,6 @@
 # theme = "onelight"
-theme = "tokyonight_storm"
+# theme = "tokyonight_storm"
+theme = "zed_onedark"
 
 [keys.normal]
 F1 = ":set whitespace.render none"
