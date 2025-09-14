@@ -249,8 +249,9 @@ load_plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-// theme "tokyo-night-storm"
-theme "ansi"
+// theme "dracula"
+// theme "gruvbox-dark"
+theme "vesper"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -329,8 +330,8 @@ pane_frames false
 // that will be used by default if this option is not set.
 // Examples:
 //
-copy_command "xclip -selection clipboard" // x11
-// copy_command "wl-copy"                    // wayland
+// copy_command "xclip -selection clipboard" // x11
+copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 // 
 // copy_command "pbcopy"

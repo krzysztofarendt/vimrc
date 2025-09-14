@@ -1,0 +1,9 @@
+[window]
+# decorations = "Full"
+decorations = "None"
+
+[font]
+size = 11.5
+
+[selection]
+save_to_clipboard = true
