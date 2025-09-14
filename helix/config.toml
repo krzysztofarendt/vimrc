@@ -14,6 +14,9 @@ L = ":sh pwd & echo ---- & ls"
 # [keys.insert]
 # "A-s" = "signature_help"
 
+"A-j" = ["move_prev_word_end", "goto_next_paragraph", "collapse_selection", "move_visual_line_down", "insert_at_line_end", "normal_mode", "insert_at_line_start", "normal_mode", "goto_next_paragraph", "trim_selections"]
+"A-k" = ["move_next_word_start", "goto_prev_paragraph", "move_visual_line_up", "goto_prev_paragraph", "trim_selections"]
+
 [editor.smart-tab]
 enable = false
 
