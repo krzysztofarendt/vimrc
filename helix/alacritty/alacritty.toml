@@ -3,7 +3,16 @@
 decorations = "None"
 
 [font]
-size = 11.5
+normal = { family = "JetBrainsMono Nerd Font", style = "Medium" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Medium Italic" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 12
 
 [selection]
 save_to_clipboard = true
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/ayu_dark.toml"
+]
