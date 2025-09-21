@@ -153,7 +153,7 @@ keybinds clear-defaults=true {
         bind "Alt ]" { NextSwapLayout; }
         bind "Ctrl g" { ToggleFloatingPanes; }
         bind "Ctrl s" { EditScrollback; }
-        bind "Ctrl f" { ToggleFocusFullscreen; }
+        // bind "Ctrl Alt f" { ToggleFocusFullscreen; }
         // bind "Ctrl b" { NewPane; }
         // bind "Ctrl o" { MoveTab "right"; }
     }
