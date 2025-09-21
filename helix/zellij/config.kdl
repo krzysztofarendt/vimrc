@@ -151,11 +151,11 @@ keybinds clear-defaults=true {
         bind "Ctrl l" { MoveFocusOrTab "right"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
-        bind "Ctrl Alt g" { ToggleFloatingPanes; }
-        bind "Ctrl Alt f" { ToggleFocusFullscreen; }
-        bind "Ctrl Alt b" { NewPane; }
-        bind "Ctrl Alt s" { EditScrollback; }
-        bind "Ctrl Alt o" { MoveTab "right"; }
+        bind "Ctrl g" { ToggleFloatingPanes; }
+        bind "Ctrl s" { EditScrollback; }
+        bind "Ctrl f" { ToggleFocusFullscreen; }
+        // bind "Ctrl b" { NewPane; }
+        // bind "Ctrl o" { MoveTab "right"; }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl b" { SwitchToMode "locked"; }
@@ -248,10 +248,7 @@ load_plugins {
  
 // Choose the theme that is specified in the themes section.
 // Default: default
-// 
-// theme "dracula"
-// theme "gruvbox-dark"
-theme "vesper"
+theme "onedark"
  
 // Choose the base input mode of zellij.
 // Default: normal
