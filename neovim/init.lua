@@ -1,391 +1,134 @@
--- Package manager: Lazy
--------------------------------------------------------------------------------
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
+require("config.lazy")
 
--- List of packages -----------------------------------------------------------
-require("lazy").setup({
-    -- Lua functions (dependency for many packages)
-    {"nvim-lua/plenary.nvim"},
-    -- Better code highlighting
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-    {"RRethy/vim-illuminate"},
-    {"mechatroner/rainbow_csv"},
-    {"lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        ---@module "ibl"
-        ---@type ibl.config
-        opts = {},
-    },
-    -- LSP, autocompletion, auto-indentation
-    {"Vimjas/vim-python-pep8-indent"},
-    {"neovim/nvim-lspconfig"},
-    {'hrsh7th/nvim-cmp'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {"ray-x/lsp_signature.nvim",
-      event = "VeryLazy",
-      opts = {},
-      config = function(_, opts) require'lsp_signature'.setup(opts) end
-    },
-    -- Folding
-    {'kevinhwang91/promise-async'},
-    {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'},
-    -- Fuzzy finder
-    {'nvim-telescope/telescope-fzf-native.nvim',
-     build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-    },
-    {"nvim-telescope/telescope.nvim", branch="0.1.x"},
-    -- Git integration
-    -- {"airblade/vim-gitgutter"},
-    {"lewis6991/gitsigns.nvim"},
-    {"tpope/vim-fugitive"},
-    -- Terminal
-    {'akinsho/toggleterm.nvim', version = "*", config = true},
-    -- Status line
-    {"nvim-lualine/lualine.nvim"},
-    -- Navigation
-    {"phaazon/hop.nvim"},
-    -- File explorer
-    {"stevearc/oil.nvim"},
-    {"nvim-tree/nvim-tree.lua"},
-    -- Color shemes
-    {"rose-pine/neovim", name = "rose-pine"},
-    {"catppuccin/nvim", name = "catppuccin", priority = 1000},
-    {"chriskempson/base16-vim"},
-    {"sainnhe/everforest"},
-    {"folke/tokyonight.nvim"},
-    {"Mofiqul/dracula.nvim"},
-    {"shaunsingh/nord.nvim"},
-    {"navarasu/onedark.nvim"},
-    {"ribru17/bamboo.nvim"},
-    {"rockyzhang24/arctic.nvim",
-      branch = "v2",
-      dependencies = { "rktjmp/lush.nvim" }
-    },
-    -- Table formatting
-    {"dhruvasagar/vim-table-mode"},
-    -- Icons
-    {"nvim-tree/nvim-web-devicons"},
-    -- Avante AI
-    {
-      "yetone/avante.nvim",
-      event = "VeryLazy",
-      lazy = false,
-      version = false, -- set this if you want to always pull the latest change
-      opts = {
-        -- add any opts here
-      },
-      -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-      build = "make",
-      -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
-      dependencies = {
-        "stevearc/dressing.nvim",
-        "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
-        --- The below dependencies are optional,
-        "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-        "zbirenbaum/copilot.lua", -- for providers='copilot'
-        {
-          -- support for image pasting
-          "HakonHarnes/img-clip.nvim",
-          event = "VeryLazy",
-          opts = {
-            -- recommended settings
-            default = {
-              embed_image_as_base64 = false,
-              prompt_for_file_name = false,
-              drag_and_drop = {
-                insert_mode = true,
-              },
-              -- required for Windows users
-              use_absolute_path = true,
-            },
-          },
-        },
-      },
-    }
-})
+vim.g.mapleader = " "
 
--- LSP config -----------------------------------------------------------------
--- Setup autocomplete from nvim-cmp
-require('cmp').setup {
-    sources = {
-        {name = 'nvim_lsp'},
-    },
-}
--- Function signature hints
-local cfg = {}  -- add your config here
-require "lsp_signature".setup(cfg)
+-- Colors
+vim.opt.background = "dark" -- dark | light
+-- vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "onedark"
+-- vim.cmd.colorscheme "oxocarbon"
 
--- Setup language servers
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require('lspconfig')
-lspconfig.clangd.setup{capabilities = capabilities}
-lspconfig.pyright.setup{capabilities = capabilities}
--- lspconfig.lua_ls.setup{capabilities = capabilities}
+-- Cycle
+vim.keymap.set('n', '<A-Right>', '<cmd>tabnext<CR>', { desc = 'Next tab' })
+vim.keymap.set('n', '<A-Left>', '<cmd>tabprev<CR>', { desc = 'Prev tab' })
 
--- Global mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
-vim.keymap.set('n', '<F3>', [[:LspRestart<CR>:echo 'LSP restarted!'<CR>]], {noremap = true})
+-- Faster mapping resolution
+vim.opt.timeout = true
+vim.opt.timeoutlen = 400 -- default ~1000; try 300ms (or 200)
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>f', function()
-      vim.lsp.buf.format { async = true }
-    end, opts)
-  end,
-})
-
--- nvim-treesitter ------------------------------------------------------------
-require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-  ensure_installed = { "c", "python", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
-
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
-
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
-}
-
--- nvim-ufo -------------------------------------------------------------------
-vim.o.foldcolumn = '0' -- '0' means do not show fold column
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
-
--- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
-
-local language_servers = require("lspconfig").util.available_servers() -- list servers manually like {'pyright', 'clangd'}
-for _, ls in ipairs(language_servers) do
-    require('lspconfig')[ls].setup({
-        capabilities = capabilities
-        -- you can add other fields for setting up lsp server in this table
-    })
-end
-require('ufo').setup()
-
--- hop config -----------------------------------------------------------------
-require'hop'.setup()
-
-local hop = require('hop')
-local directions = require('hop.hint').HintDirection
-vim.keymap.set('n', '<leader>hh',  ":HopWord<CR>", {noremap = true})
-
--- nvim-tree setup ------------------------------------------------------------
--- https://www.nerdfonts.com/font-downloads
--- Suggested: FiraCode Nerd Font
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
-vim.opt.termguicolors = true
-require("nvim-tree").setup()
-vim.keymap.set('n', '<F9>', ':NvimTreeToggle<CR>', {noremap = true})
-
--- oil setup ------------------------------------------------------------------
-require("oil").setup()
-vim.keymap.set('n', '<F8>', ':Oil<CR>', {noremap = true})
-
--- illuminate setup -----------------------------------------------------------
-require('illuminate').configure({
-    under_cursor = false,
-})
-
--- toggleterm setup -----------------------------------------------------------
-require("toggleterm").setup{
-    -- direction="float",
-    -- direction="horizontal",
-    direction="horizontal",
-    size = function(term)
-        if term.direction == "horizontal" then
-          return 15
-        elseif term.direction == "vertical" then
-          return vim.o.columns * 0.4
-        end
-    end,
-    -- float_opts = {
-    --     border = "curved",
-    -- },
-}
-
-function _G.set_terminal_keymaps()
-  local opts = {buffer = 0}
-  vim.keymap.set('t', '<esc><esc>', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
-end
-
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-vim.keymap.set('n', '<F7>', [[:ToggleTerm<CR>]], {})
-vim.keymap.set('t', '<F7>', [[<esc>:ToggleTerm<CR>]], {})
-vim.keymap.set('v', '<F7>', [[<esc>:ToggleTerm<CR>]], {})
-vim.keymap.set('t', '<F7>', [[<C-\><C-n>:ToggleTerm<CR>]], {})
-vim.keymap.set('i', '<F7>', [[<esc>:ToggleTerm<CR>]], {})
-vim.keymap.set('n', '<F6>', [[<esc>:ToggleTerm ]], {})
-vim.cmd('autocmd TermOpen * setlocal nonumber norelativenumber')  -- turn off line numbers
-
--- Telescope settings ---------------------------------------------------------
--- You dont need to set any of these options. These are the default ones. Only
--- the loading is important
-local actions = require('telescope.actions')
-require('telescope').setup {
-  extensions = {
-    fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "ignore_case",       -- "smart_case" | "ignore_case" | "respect_case"
-                                       -- the default case_mode is "smart_case"
-    }
-  },
-  pickers = {
-    live_grep = {
-      mappings = {
-        i = { ["<c-f>"] = actions.to_fuzzy_refine },
-      },
-    },
-  },
-}
--- To get fzf loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
-require('telescope').load_extension('fzf')
-
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fs', builtin.grep_string, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
--- Grep: normal
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
--- Grep: fuzzy
--- vim.keymap.set('n', '<leader>fg', [[:Telescope grep_string search="" only_sort_text=true<CR>]], {})
-
--- Setup lualine --------------------------------------------------------------
-require('lualine').setup({options = {
-    theme = 'dracula',
-    -- theme = 'powerline',
-    -- theme = 'material',
-    -- theme = 'wombat',
-    -- theme = 'everforest',
-    icons_enabled = false,
-    section_separators = { left = "", right = "" },
-    component_separators = { left = "/", right = "/" },
-}})
-
--- Setup gitsigns -------------------------------------------------------------
-require('gitsigns').setup()
-
--- Remove all trailing whitespace upon saving ---------------------------------
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*" },
-  command = [[%s/\s\+$//e]],
-})
-
--- Tab -> 4 spaces ------------------------------------------------------------
+-- Tab -> 4 spaces
 vim.cmd('set tabstop=4')
 vim.cmd('set shiftwidth=4')
 vim.cmd('set expandtab')
 
--- General keymaps ------------------------------------------------------------
+-- Line numbers
 vim.cmd('set number')
-vim.keymap.set('n', '<F5>', ':set number!<CR>', {noremap = true})
-vim.keymap.set('n', '<leader>p', [[:echo expand('%:p')<CR>]], {noremap = true}) -- show absolute path of current file
-vim.keymap.set("n", "<leader>dt", [[:r! date "+\%Y-\%m-\%d \%H:\%M:\%S" <CR>]], {noremap = true})
-vim.keymap.set('x', '<leader>r', '"xd"0P', {noremap = true})
+vim.keymap.set('n', '<F5>', ':set number!<CR>', { noremap = true })
 
--- Other ----------------------------------------------------------------------
-vim.opt.completeopt = { "menu" }
-vim.opt.cursorline = false
-vim.opt.cursorcolumn = false
+-- Normal mode: clear search highlight
+vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR>', { silent = true, desc = 'Clear highlights' })
 
--- clipboard-osc52 ------------------------------------------------------------
--- Not used since I switched to Fedora
--- vim.g.clipboard = {
---   name = 'OSC 52',
---   copy = {
---     ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
---     ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
---   },
---   paste = {
---     ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
---     ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
---   },
--- }
+-- Remove all trailing whitespace upon saving
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*" },
+    command = [[%s/\s\+$//e]],
+})
 
--- Show only file names in the tab line ---------------------------------------
-vim.o.tabline = "%!v:lua.tabline()"
-
-function _G.tabline()
-    local s = ""
-    for i = 1, vim.fn.tabpagenr('$') do
-        -- Get the window number of the first window in the tab page
-        local winnr = vim.fn.tabpagewinnr(i, '$')
-        -- Get the buffer number associated with the window
-        local bufnr = vim.fn.tabpagebuflist(i)[winnr]
-        -- Get the filename associated with the buffer number
-        local filename = vim.fn.bufname(bufnr)
-        -- Extract the file name from the full path
-        filename = vim.fn.fnamemodify(filename, ':t')
-        -- Highlight the current tab
-        local hl = i == vim.fn.tabpagenr() and '%#TabLineSel#' or '%#TabLine#'
-        -- Add the tab label to the tabline string
-        s = s .. string.format('%s %d: %s ', hl, i, filename)
-    end
-    return s
+-- Terminal
+function _G.set_terminal_keymaps()
+    local opts = { buffer = 0 }
+    vim.keymap.set('t', '<esc><esc>', [[<C-\><C-n>]], opts)
+    vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
 end
 
--- Table mode -----------------------------------------------------------------
-vim.g.table_mode_syntax = 0  -- fixes slow Table Mode for large tables
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+vim.cmd('autocmd TermOpen * setlocal nonumber norelativenumber') -- turn off line numbers
 
--- Color scheme ---------------------------------------------------------------
--- vim.cmd.colorscheme('rose-pine')
--- vim.cmd.colorscheme('rose-pine-dawn')
--- vim.cmd.colorscheme('catppuccin')
--- vim.cmd.colorscheme('catppuccin-latte')
--- vim.cmd.colorscheme('tokyonight')
--- vim.cmd.colorscheme('dracula')
--- vim.cmd.colorscheme('dracula-soft')
--- vim.cmd.colorscheme('everforest')
--- vim.cmd.colorscheme('base16-tomorrow-night')
--- vim.cmd.colorscheme('arctic')
--- vim.cmd.colorscheme('nord')
--- vim.cmd.colorscheme('onedark')
-vim.cmd.colorscheme('bamboo')
+----------------------- PLUGIN CONFIGURATION ----------------------------------
+
+-- Hop
+require 'hop'.setup()
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
+vim.keymap.set('n', '<leader>h', ":HopWord<CR>", { noremap = true })
+
+-- Lualine
+require('lualine').setup()
+
+-- Oil
+vim.keymap.set("n", "<leader>e", ":Oil<CR>", { desc = "Open Oil file explorer" })
+
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+-- LSP configs
+vim.lsp.enable('rust_analyzer')
+vim.lsp.config('rust_analyzer', {
+    settings = {
+        ['rust-analyzer'] = {
+            diagnostics = {
+                enable = false,
+            }
+        }
+    }
+})
+
+vim.lsp.enable('pyright')
+vim.lsp.enable('lua_ls')
+
+-- LSP keymaps (buffer-local on attach)
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('UserLspKeymaps', { clear = true }),
+    callback = function(ev)
+        local builtin = require('telescope.builtin')
+        local buf = ev.buf
+        local opts = function(desc) return { buffer = buf, silent = true, noremap = true, desc = desc } end
+
+        -- Jumps / info
+        vim.keymap.set('n', 'gd', builtin.lsp_definitions, opts('Go to definition'))
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts('Go to declaration'))
+        vim.keymap.set('n', 'gr', builtin.lsp_references, opts('References'))
+        vim.keymap.set('n', 'gi', builtin.lsp_implementations, opts('Go to implementation'))
+        vim.keymap.set('n', 'gt', builtin.lsp_type_definitions, opts('Go to type definition'))
+        vim.keymap.set('n', '<leader>k', vim.lsp.buf.hover, opts('Hover'))
+
+        -- Actions
+        vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts('Rename symbol'))
+        vim.keymap.set({ 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action, opts('Code action'))
+
+        -- Diagnostics
+        vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts('Line diagnostics'))
+        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts('Prev diagnostic'))
+        vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts('Next diagnostic'))
+        vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts('Diagnostics to loclist'))
+
+        -- Formatting (sync/async depending on server)
+        vim.keymap.set({ 'n', 'v' }, '<leader>f', function()
+            vim.lsp.buf.format({ async = true })
+        end, opts('Format buffer/selection'))
+
+        -- (Optional) toggle inlay hints (Neovim 0.10+)
+        if vim.lsp.inlay_hint then
+            vim.keymap.set('n', '<leader>th', function()
+                vim.lsp.inlay_hint(buf, not vim.lsp.inlay_hint.is_enabled(buf))
+            end, opts('Toggle inlay hints'))
+        end
+    end,
+})
+
+-- nvim-treesitter ------------------------------------------------------------
+require 'nvim-treesitter.configs'.setup {
+    -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+    ensure_installed = { "c", "cpp", "rust", "python", "lua", "markdown", "markdown_inline" },
+
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = false,
+
+    -- Automatically install missing parsers when entering buffer
+    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+    auto_install = true,
+}
