@@ -87,7 +87,6 @@ vim.lsp.config('rust_analyzer', {
 })
 
 vim.lsp.enable('pyright')
-vim.lsp.enable('lua_ls')
 
 -- LSP keymaps (buffer-local on attach)
 vim.api.nvim_create_autocmd('LspAttach', {
