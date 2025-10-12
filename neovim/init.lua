@@ -21,6 +21,15 @@ vim.cmd('set tabstop=4')
 vim.cmd('set shiftwidth=4')
 vim.cmd('set expandtab')
 
+-- Comment lines
+vim.keymap.set('n', '<leader>/', ':normal gcc<CR><DOWN>', { desc = '[/] Toggle comment line' })
+-- <Esc> - exists visual mode.
+-- :normal executes keystrokes in normal mode.
+-- gv - restores selection.
+-- gc - toggles comment
+-- <CR> sends the command
+vim.keymap.set('v', '<leader>/', '<Esc>:normal gvgc<CR>', { desc = '[/] Toggle comment block' })
+
 -- Line numbers
 vim.cmd('set number')
 vim.keymap.set('n', '<F5>', ':set number!<CR>', { noremap = true })
