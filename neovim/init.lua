@@ -120,16 +120,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end, opts('Format buffer/selection'))
 
         -- Auto-show signature help after you pause typing
-        vim.opt.updatetime = 300  -- ms before CursorHold/InsertHold fire
-        vim.api.nvim_create_autocmd('CursorHoldI', {
-          callback = function()
-            -- only if server supports it
-            local c = vim.lsp.get_clients({ bufnr = 0 })[1]
-            if c and c.server_capabilities.signatureHelpProvider then
-              vim.lsp.buf.signature_help()
-            end
-          end,
-        })
+        -- vim.opt.updatetime = 300  -- ms before CursorHold/InsertHold fire
+        -- vim.api.nvim_create_autocmd('CursorHoldI', {
+        --   callback = function()
+        --     -- only if server supports it
+        --     local c = vim.lsp.get_clients({ bufnr = 0 })[1]
+        --     if c and c.server_capabilities.signatureHelpProvider then
+        --       vim.lsp.buf.signature_help()
+        --     end
+        --   end,
+        -- })
 
         -- (Optional) toggle inlay hints (Neovim 0.10+)
         -- if vim.lsp.inlay_hint then
