@@ -118,7 +118,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts('Diagnostics to loclist'))
 
         -- Formatting (sync/async depending on server)
-        vim.keymap.set({ 'n', 'v' }, '<leader>f', function()
+        vim.keymap.set({ 'n', 'v' }, '<leader>fm', function()
             vim.lsp.buf.format({ async = true })
         end, opts('Format buffer/selection'))
 
