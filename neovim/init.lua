@@ -112,15 +112,27 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set({ 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action, opts('Code action'))
 
         -- Diagnostics
-        vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts('Line diagnostics'))
+        vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts('Line diagnostics'))
         vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts('Prev diagnostic'))
         vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts('Next diagnostic'))
-        vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts('Diagnostics to loclist'))
+        vim.keymap.set('n', '<leader>D', vim.diagnostic.setloclist, opts('Diagnostics to loclist'))
 
         -- Formatting (sync/async depending on server)
         vim.keymap.set({ 'n', 'v' }, '<leader>fm', function()
             vim.lsp.buf.format({ async = true })
         end, opts('Format buffer/selection'))
+
+        -- UI tweaks (optional)
+        vim.opt.completeopt = "menuone,noselect"
+        vim.opt.shortmess:append("c")
+
+        -- Make sure omnifunc is set when LSP attaches
+        vim.api.nvim_create_autocmd("LspAttach", {
+          group = vim.api.nvim_create_augroup("UserLspOmni", { clear = true }),
+          callback = function(ev)
+            vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+          end,
+        })
 
         -- Manual trigger keys
         vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", { desc = "Trigger LSP completion" })
