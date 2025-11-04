@@ -26,6 +26,7 @@ vim.cmd('set expandtab')
 
 -- Comment lines
 vim.keymap.set('n', '<C-c>', ':normal gcc<CR>', { desc = '[/] Toggle comment line' })
+vim.keymap.set('v', '<C-c>', ':normal gcc<CR>', { desc = '[/] Toggle comment line' })
 vim.keymap.set('n', '<leader>/', ':normal gcc<CR><DOWN>', { desc = '[/] Toggle comment line' })
 -- <Esc> - exists visual mode.
 -- :normal executes keystrokes in normal mode.
