@@ -8,6 +8,9 @@ vim.opt.background = "dark" -- dark | light
 vim.cmd.colorscheme "onedark"
 -- vim.cmd.colorscheme "oxocarbon"
 
+-- Share system clipboard
+vim.opt.clipboard = 'unnamedplus'
+
 -- Cycle
 vim.keymap.set('n', '<A-Right>', '<cmd>tabnext<CR>', { desc = 'Next tab' })
 vim.keymap.set('n', '<A-Left>', '<cmd>tabprev<CR>', { desc = 'Prev tab' })
@@ -22,6 +25,7 @@ vim.cmd('set shiftwidth=4')
 vim.cmd('set expandtab')
 
 -- Comment lines
+vim.keymap.set('n', '<C-c>', ':normal gcc<CR>', { desc = '[/] Toggle comment line' })
 vim.keymap.set('n', '<leader>/', ':normal gcc<CR><DOWN>', { desc = '[/] Toggle comment line' })
 -- <Esc> - exists visual mode.
 -- :normal executes keystrokes in normal mode.
