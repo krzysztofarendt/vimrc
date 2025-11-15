@@ -8,8 +8,21 @@ vim.opt.background = "dark" -- dark | light
 vim.cmd.colorscheme "onedark"
 -- vim.cmd.colorscheme "oxocarbon"
 
--- Share system clipboard
-vim.opt.clipboard = 'unnamedplus'
+-- Use OSC52 to talk to the *local* clipboard over SSH
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+  },
+}
+
+-- And then tell Neovim to use the + register as "system clipboard"
+-- vim.opt.clipboard = "unnamedplus"
 
 -- Cycle
 vim.keymap.set('n', '<A-Right>', '<cmd>tabnext<CR>', { desc = 'Next tab' })
@@ -159,3 +172,4 @@ require 'nvim-treesitter.configs'.setup {
     -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
     auto_install = true,
 }
+
