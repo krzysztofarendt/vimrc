@@ -1,5 +1,6 @@
 # theme = "onelight"
 # theme = "tokyonight_storm"
+# theme = "starlight"
 theme = "zed_onedark"
 
 [keys.normal]
@@ -12,12 +13,19 @@ L = ":sh pwd & echo ---- & ls"
 "A-j" = ["move_prev_word_end", "goto_next_paragraph", "collapse_selection", "move_visual_line_down", "insert_at_line_end", "normal_mode", "insert_at_line_start", "normal_mode", "goto_next_paragraph", "trim_selections"]
 "A-k" = ["move_next_word_start", "goto_prev_paragraph", "move_visual_line_up", "goto_prev_paragraph", "trim_selections"]
 
-[editor.smart-tab]
-enable = false
-
 [editor]
 auto-pairs = false
 auto-format = false
+true-color = true
+
+[editor.smart-tab]
+enable = false
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+wrap-indicator = ""  # set wrap-indicator to "" to hide it
 
 # [editor.lsp]
 # auto-signature-help = false
