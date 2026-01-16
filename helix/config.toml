@@ -1,7 +1,7 @@
 # theme = "onelight"
 # theme = "tokyonight_storm"
-# theme = "zed_onedark"
-theme = "starlight"
+# theme = "starlight"
+theme = "zed_onedark"
 
 [keys.normal]
 F1 = ":set whitespace.render none"
@@ -9,10 +9,6 @@ F2 = ":set whitespace.render all"
 X = ["extend_line_up", "extend_to_line_bounds"]
 G = ":sh git status"
 L = ":sh pwd & echo ---- & ls"
-# "A-s" = "signature_help"
-
-# [keys.insert]
-# "A-s" = "signature_help"
 
 "A-j" = ["move_prev_word_end", "goto_next_paragraph", "collapse_selection", "move_visual_line_down", "insert_at_line_end", "normal_mode", "insert_at_line_start", "normal_mode", "goto_next_paragraph", "trim_selections"]
 "A-k" = ["move_next_word_start", "goto_prev_paragraph", "move_visual_line_up", "goto_prev_paragraph", "trim_selections"]
@@ -23,6 +19,7 @@ enable = false
 [editor]
 auto-pairs = false
 auto-format = false
+true-color = true
 
 # [editor.lsp]
 # auto-signature-help = false
