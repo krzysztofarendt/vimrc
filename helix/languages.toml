@@ -12,3 +12,8 @@ name = "rust"
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
+
+# Install mdformat with pipx: pipx install mdformat
+[[language]]
+name = "markdown"
+formatter = { command = "mdformat", args = ["--wrap", "80", "-"] }

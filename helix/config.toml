@@ -1,5 +1,9 @@
-theme = "zed_onedark"
+# theme = "zed_onedark"
+theme = "papercolor-light"
+# theme = "penumbra+"
+# theme = "term16_light"
 # theme = "cyan_light"
+# theme = "gruvbox_light_hard"
 
 [keys.normal]
 F1 = ":set whitespace.render none"
