@@ -17,6 +17,7 @@ sudo apt install helix
 ## Configure helix
 - Install `pipx`
 - Install `pyright`: `pipx install pyright`
+- Install `mdformat`: `pipx install mdformat`
 - Copy `languages.toml` and `config.toml` to `~/.config/helix/`
 - Set helix your default editor: `hx ~/.bashrc`:
 ```
