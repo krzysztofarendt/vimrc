@@ -19,6 +19,7 @@ G = ":sh git status"
 auto-pairs = false
 auto-format = false
 true-color = true
+# default-yank-register = "+"
 
 [editor.smart-tab]
 enable = false
