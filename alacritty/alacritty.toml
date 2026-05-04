@@ -14,7 +14,7 @@ save_to_clipboard = true
 
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/doom_one.toml"
+    "~/.config/alacritty/themes/themes/tomorrow.toml"
 ]
 
 [[hints.enabled]]

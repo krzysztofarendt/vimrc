@@ -1,9 +1,6 @@
-# theme = "zed_onedark"
-theme = "papercolor-light"
-# theme = "penumbra+"
-# theme = "term16_light"
+theme = "modus_operandi_tritanopia"
+# theme = "papercolor-light"
 # theme = "cyan_light"
-# theme = "gruvbox_light_hard"
 
 [keys.normal]
 F1 = ":set whitespace.render none"
