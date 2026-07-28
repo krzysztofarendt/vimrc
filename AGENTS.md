@@ -9,5 +9,6 @@ This repository stores editor and terminal dotfiles. Each top-level directory ma
 - `alacritty/` -> `~/.config/alacritty/`
 - `tmux/` -> `~/.tmux.conf`
 - `zellij/` -> `~/.config/zellij/config.kdl`
+- `nnn/` -> sourced from `~/.bashrc`, not a config directory
 
 Keep new files near the tool they configure. Prefer one Neovim plugin spec per file under `nvim/lua/plugins/`.

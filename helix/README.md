@@ -42,6 +42,7 @@ export VISUAL=hx
 
 `nnn`:
 - https://github.com/jarun/nnn
+- see `nnn/README.md` for the `n` cd-on-quit wrapper
 
 `lazygit`:
 - https://github.com/jesseduffield/lazygit
