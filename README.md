@@ -25,8 +25,7 @@ Editors and language tooling (only if using Helix or Neovim):
 sudo pacman -S helix neovim tree-sitter-cli pyright ruff rust-analyzer python-black python-pipx
 ```
 
-Arch installs Helix as `helix`, not `hx`. Add an alias so `hx` (used below and
-in the delta config) works:
+Arch installs Helix as `helix`, not `hx`. If you use Helix, add an alias:
 ```bash
 alias hx=helix
 ```
@@ -56,6 +55,24 @@ and extract it to `~/.local/share/fonts/`, then run `fc-cache -f`.
 
 ## Tools
 
+### Runyte
+Install or update (installs to `~/.local/bin/runyte`, no sudo):
+```bash
+curl -fsSL https://raw.githubusercontent.com/runyte/runyte/main/install.sh | sh
+```
+
+Set it as the default editor (git, nnn, Claude Code, Codex) in `~/.bashrc`:
+```bash
+alias ru=runyte
+export EDITOR='runyte --wait'
+export VISUAL='runyte --wait'
+```
+
+`--wait` makes the calling program wait until you close the file. Clipboard
+support on Linux needs `wl-clipboard`, `xclip` or `xsel`. For the `:quit-here`
+shell wrapper, see the
+[Runyte post-install setup](https://github.com/runyte/runyte#post-install-setup).
+
 ### tmux
 - Copy `tmux/tmux_dark.conf` or `tmux/tmux_light.conf` to `~/.tmux.conf`
 - For WSL, switch the clipboard keymap to
@@ -79,7 +96,6 @@ Add to `~/.gitconfig`:
 ```
 [core]
     pager = delta
-    editor = hx
 
 [interactive]
     diffFilter = delta --color-only
@@ -94,12 +110,7 @@ Add to `~/.gitconfig`:
     conflictstyle = zdiff3
 ```
 
-### Default editor
-In `~/.bashrc`:
-```bash
-export EDITOR=hx
-export VISUAL=hx
-```
+No `core.editor` is set, so git uses `$VISUAL`/`$EDITOR` (Runyte, see above).
 
 ## Links
 
