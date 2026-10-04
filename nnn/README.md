@@ -9,12 +9,7 @@ from your shell rc.
 
 ## Installation
 
-### Fedora
-```bash
-sudo dnf install nnn
-```
-
-Then add this to `~/.bashrc` (works the same in `~/.zshrc`):
+Install `nnn` with your package manager (see the main README), then add this to `~/.bashrc` (works the same in `~/.zshrc`):
 ```bash
 . "$HOME/code/vimrc/nnn/quitcd.sh"
 ```
